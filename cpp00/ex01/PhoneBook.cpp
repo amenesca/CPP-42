@@ -11,10 +11,19 @@ PhoneBook::~PhoneBook(void)
 	std::cout << "PhoneBook destruido\n";
 	return ;
 }
-
-int main()
+void PhoneBook::gather_info(void)
 {
-	PhoneBook phone;
+	std::string aux;
 
-	return (0);
+	std::cout << "Enter your first name: ";
+	std::cin >> aux;
+
+	this->contacts[0].save_info(aux);
+
+	return ;
+}
+
+void PhoneBook::print_info(void)
+{
+	this->contacts[0].print_attributes();
 }

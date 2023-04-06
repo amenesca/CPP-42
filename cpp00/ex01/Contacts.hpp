@@ -17,7 +17,7 @@ public:
 
 	Contacts (void);
 	~Contacts (void);
-	void save_info(std::string attribute);
+	void save_info(std::string attribute, int att);
 	void print_attributes(void);
 };
 

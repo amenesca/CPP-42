@@ -68,3 +68,8 @@ int main()
    
    std::cout << name << "'s favourite movie is " << title;
 }*/
+
+/* 
+std::string s;
+std::getline(std::cin >> std::ws, s);
+*/

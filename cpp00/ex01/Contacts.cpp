@@ -20,12 +20,13 @@ void Contacts::save_info(std::string attribute, int att)
 
 void Contacts::print_search(int index)
 {
+	std::string choose;
+
 	std::cout << " " << index + 1 << "|";
 	for (int i = 0; i < 3; i++)
 	{
 		right_align(this->attributes[i]);
-		if (i != 2)
-			std::cout << "|";
+		std::cout << "|";
 	}
 	std::cout << std::endl;
 }
@@ -51,4 +52,13 @@ void Contacts::right_align(std::string attribute)
 	else
 		std::cout << attribute;
 	return ;
+}
+
+void Contacts::print_info(void)
+{
+	std::cout << "First Name: " << this->attributes[0] << std::endl;
+	std::cout << "Last Name: " << this->attributes[1] << std::endl;
+	std::cout << "Nickname: " << this->attributes[2] << std::endl;
+	std::cout << "Phone Number: " << this->attributes[3] << std::endl;
+	std::cout << "Darkest Secret: " << this->attributes[4] << std::endl;
 }

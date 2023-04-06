@@ -13,7 +13,7 @@ public:
 	~PhoneBook (void);
 
 	void	gather_info(int index);
-	void	do_search(int index);
+	void	do_search(int quant);
 
 };
 

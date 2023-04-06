@@ -8,7 +8,7 @@ PhoneBook::PhoneBook(void)
 
 PhoneBook::~PhoneBook(void)
 {
-//	std::cout << "PhoneBook destruido\n";
+// 	std::cout << "PhoneBook destruido\n";
 	return ;
 }
 void PhoneBook::gather_info(int index)
@@ -34,9 +34,11 @@ void PhoneBook::gather_info(int index)
 	return ;
 }
 
-void PhoneBook::do_search(int i)
+void PhoneBook::do_search(int quant)
 {
-	for (int index = 0; index < i; index++)
+	if (quant > 7)
+		quant = 8;
+	for (int index = 0; index < quant; index++)
 		this->contacts[index].print_search(index);
 	return ;
 }

@@ -11,8 +11,9 @@ private:
 public:
 	PhoneBook (void);
 	~PhoneBook (void);
-	void	gather_info(void);
-	void	print_info(void);
+
+	void	gather_info(int index);
+	void	do_search(int index);
 
 };
 

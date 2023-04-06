@@ -18,14 +18,14 @@ void interface(void)
 	return ;
 }
 
-void get_command(PhoneBook *myPhonebook, int *running)
+void get_command(PhoneBook *phonebook, int *running, int index)
 {
 	std::string comm;
 	std::cin >> comm;
 	if (comm == "ADD")
-		myPhonebook->gather_info();
+		phonebook->gather_info(index);
 	else if (comm == "SEARCH")
-		return ;
+		phonebook->do_search(index);
 	else if (comm == "EXIT")
 		*running = 0;
 	else
@@ -35,14 +35,19 @@ void get_command(PhoneBook *myPhonebook, int *running)
 
 int main()
 {
-	PhoneBook myPhonebook;
+	PhoneBook phonebook;
 	int running = 1;
+	int index = 0;
+	int quant = 0;
 
 	presentation();
 	while (running)
 	{
+		if (index == 8)
+			index = 0;
 		interface();
-		get_command(&myPhonebook, &running);
+		get_command(&phonebook, &running, &i);
+		quant++;
 	}
 	return (0);
 }

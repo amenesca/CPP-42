@@ -17,8 +17,9 @@ public:
 
 	Contacts (void);
 	~Contacts (void);
+
 	void save_info(std::string attribute, int att);
-	void print_attributes(void);
+	void print_search(int index);
 };
 
 #endif

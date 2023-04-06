@@ -18,11 +18,7 @@ void Contacts::save_info(std::string attribute, int att)
 	return ;
 }
 
-void Contacts::print_attributes(void)
+void Contacts::print_search(int index)
 {
-	std::cout << this->attributes[0] << std::endl;
-	std::cout << this->attributes[1] << std::endl;
-	std::cout << this->attributes[2] << std::endl;
-	std::cout << this->attributes[3] << std::endl;
-	std::cout << this->attributes[4] << std::endl;
+	std::cout << " " << index << " |"; 
 }

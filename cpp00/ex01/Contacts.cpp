@@ -56,9 +56,9 @@ void Contacts::right_align(std::string attribute)
 
 void Contacts::print_info(void)
 {
-	std::cout << "First Name: " << this->attributes[0] << std::endl;
+	std::cout << std::endl << "First Name: " << this->attributes[0] << std::endl;
 	std::cout << "Last Name: " << this->attributes[1] << std::endl;
 	std::cout << "Nickname: " << this->attributes[2] << std::endl;
 	std::cout << "Phone Number: " << this->attributes[3] << std::endl;
-	std::cout << "Darkest Secret: " << this->attributes[4] << std::endl;
+	std::cout << "Darkest Secret: " << this->attributes[4] << std::endl << std::endl;
 }

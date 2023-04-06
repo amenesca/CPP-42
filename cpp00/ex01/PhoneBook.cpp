@@ -15,22 +15,22 @@ void PhoneBook::gather_info(int index)
 {
 	std::string aux;
 
-	std::cout << "\033[93mEnter your first name: \033[0;0m";
+	std::cout << "Enter your first name: ";
 	std::cin >> aux;
 	this->contacts[index].save_info(aux, FNAME);
-	std::cout << "\033[93mEnter your last name: \033[0;0m";
+	std::cout << "Enter your last name: ";
 	std::cin >> aux;
 	this->contacts[index].save_info(aux, LNAME);
-	std::cout << "\033[93mEnter your nickname name: \033[0;0m";
+	std::cout << "Enter your nickname name: ";
 	std::cin >> aux;
 	this->contacts[index].save_info(aux, NNAME);
-	std::cout << "\033[93mEnter your phone number name: \033[0;0m";
+	std::cout << "Enter your phone number name: ";
 	std::cin >> aux;
 	this->contacts[index].save_info(aux, PNUMBER);
-	std::cout << "\033[93mEnter your darkest secret name: \033[0;0m";
+	std::cout << "Enter your darkest secret name: ";
 	std::cin >> aux;
 	this->contacts[index].save_info(aux, DSECRET);
-	std::cout << "\033[91mContact saved!\033[0;0m" << std::endl << std::endl;
+	std::cout << "Contact saved!" << std::endl << std::endl;
 	return ;
 }
 

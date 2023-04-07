@@ -14,22 +14,58 @@ PhoneBook::~PhoneBook(void)
 void PhoneBook::gather_info(int index)
 {
 	std::string aux;
+	int is_blank = 0;
 
-	std::cout << "Enter your first name: ";
-	std::cin >> aux;
-	this->contacts[index].save_info(aux, FNAME);
-	std::cout << "Enter your last name: ";
-	std::cin >> aux;
-	this->contacts[index].save_info(aux, LNAME);
-	std::cout << "Enter your nickname: ";
-	std::cin >> aux;
-	this->contacts[index].save_info(aux, NNAME);
-	std::cout << "Enter your phone number: ";
-	std::cin >> aux;
-	this->contacts[index].save_info(aux, PNUMBER);
-	std::cout << "Enter your darkest secret: ";
-	std::cin >> aux;
-	this->contacts[index].save_info(aux, DSECRET);
+	while (++is_blank)
+	{
+		std::cout << "Enter your first name: ";
+		std::getline(std::cin, aux);
+		this->contacts[index].save_info(aux, FNAME);
+		if (aux.size() > 0)
+			is_blank = -1;
+		else
+			std::cout << "Cannot accept empty input, try again." << std::endl;
+	}
+	while (++is_blank)
+	{
+		std::cout << "Enter your last name: ";
+		std::getline(std::cin, aux);
+		this->contacts[index].save_info(aux, LNAME);
+		if (aux.size() > 0)
+			is_blank = -1;
+		else
+			std::cout << "Cannot accept empty input, try again." << std::endl;
+	}
+	while (++is_blank)
+	{
+		std::cout << "Enter your nickname: ";
+		std::getline(std::cin, aux);
+		this->contacts[index].save_info(aux, NNAME);
+		if (aux.size() > 0)
+			is_blank = -1;
+		else
+			std::cout << "Cannot accept empty input, try again." << std::endl;
+	}
+	while (++is_blank)
+	{
+		std::cout << "Enter your phone number: ";
+		std::getline(std::cin, aux);
+		this->contacts[index].save_info(aux, PNUMBER);
+		if (aux.size() > 0)
+			is_blank = -1;
+		else
+			std::cout << "Cannot accept empty input, try again." << std::endl;
+	}
+	while (++is_blank)
+	{
+		std::cout << "Enter your darkest secret: ";
+		std::getline(std::cin, aux);
+		this->contacts[index].save_info(aux, DSECRET);
+		if (aux.size() > 0)
+			is_blank = -1;
+		else
+			std::cout << "Cannot accept empty input, try again." << std::endl;
+	}
 	std::cout << std::endl << "Contact saved!" << std::endl << std::endl;
 	return ;
 }
@@ -45,7 +81,7 @@ void PhoneBook::do_search(int quant)
 	if (quant > 0)
 	{
 		std::cout << "Enter the index to display the info of the choosen contact: ";
-		std::cin >> choose;
+		std::getline(std::cin, choose);
 		if (choose == "1" && quant > 0)
 			this->contacts[0].print_info();
 		else if (choose == "2" && quant > 1)

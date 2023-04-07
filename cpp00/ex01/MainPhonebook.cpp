@@ -22,11 +22,11 @@ void get_command(PhoneBook *phonebook, int *running)
 {
 	static int index;
 	static int quant;
+	std::string comm;
 
 	if (index == 8)
 		index = 0;
-	std::string comm;
-	std::cin >> comm;
+	std::getline(std::cin, comm);
 	if (comm == "ADD")
 	{
 		phonebook->gather_info(index);

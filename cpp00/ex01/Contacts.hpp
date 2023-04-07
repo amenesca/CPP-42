@@ -10,12 +10,6 @@ private:
 	std::string attributes[5];
 
 public:
-	#define FNAME 0
-	#define LNAME 1
-	#define NNAME 2
-	#define PNUMBER 3
-	#define DSECRET 4
-
 	Contacts (void);
 	~Contacts (void);
 

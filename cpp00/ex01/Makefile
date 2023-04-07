@@ -4,12 +4,12 @@ SRC = PhoneBook.cpp Contacts.cpp MainPhonebook.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-FLAGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	c++ -o $(NAME) $(FLAGS) $(OBJ)
+	c++ -o $(NAME) $(CPPFLAGS) $(OBJ)
 
 clean:
 	rm -f $(OBJ)

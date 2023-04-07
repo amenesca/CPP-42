@@ -2,10 +2,6 @@
 # define CONTACTS_HPP
 
 #include <iostream>
-#include <string>
-#include <string.h>
-#include <locale>
-#include <locale.h>
 
 class Contacts {
 

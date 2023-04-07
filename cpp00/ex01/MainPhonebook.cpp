@@ -44,7 +44,6 @@ void get_command(PhoneBook *phonebook, int *running)
 
 int main()
 {
-	setlocale(LC_ALL, "portuguese");
 	PhoneBook phonebook;
 	int running = 1;
 

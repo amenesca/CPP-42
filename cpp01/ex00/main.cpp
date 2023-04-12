@@ -2,7 +2,7 @@
 
 int main( void )
 {
-	Zombie *zombieHeap;
+	Zombie* zombieHeap;
 	std::string name;
 
 	name = "Heaper";

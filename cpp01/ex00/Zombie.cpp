@@ -1,24 +1,18 @@
 #include "./Zombie.hpp"
 
-Zombie::Zombie(void)
+Zombie::Zombie(std::string name)
 {
+	this->name = name;
 	return ;
 }
 
 Zombie::~Zombie(void)
 {
+	std::cout << this->name << ": was destroyed!" << std::endl;
 	return ;
 }
 
-
-void Zombie::announce( void )
+void Zombie::announce(void)
 {
 	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
-
-Zombie *Zombie::newZombie( std::string name )
-{
-	Zombie *zombie = new Zombie;
-	zombie->name = name;
-	return (zombie);
 }

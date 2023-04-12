@@ -2,11 +2,14 @@
 
 int main( void )
 {
-	Zombie *zombie;
-	zombie = NULL;
-	std::string name = "alan";
+	Zombie *zombieHeap;
+	std::string name;
 
-	zombie = zombie->newZombie(name);
-	zombie->announce();
-
+	name = "Heaper";
+	zombieHeap = newZombie(name);
+	zombieHeap->announce();
+	name = "Stacker";
+	randomChump(name);
+	delete zombieHeap;
+	return (0);
 }

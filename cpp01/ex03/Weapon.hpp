@@ -9,10 +9,9 @@ private:
 	std::string type;
 
 public:
-	Weapon(std::string type);
-	Weapon(void);
+	Weapon(std::string type); // Constructor da classe weapon que inicializa a string type
 	~Weapon(void);
-	std::string const & getType(void) const;
+	std::string const & getType(void);
 	void setType(std::string type);
 };
 

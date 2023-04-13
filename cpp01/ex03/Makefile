@@ -1,6 +1,6 @@
-NAME = hiThisIsBrain
+NAME = Unnecessaryviolence
 
-SRC = HumanB.cpp Weapon.cpp main.cpp
+SRC = HumanA.cpp HumanB.cpp Weapon.cpp main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

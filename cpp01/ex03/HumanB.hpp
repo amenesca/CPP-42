@@ -2,7 +2,7 @@
 # define HUMANB_HPP
 
 #include <iostream>
-#include <Weapon.hpp>
+#include "Weapon.hpp"
 
 class HumanB {
 
@@ -12,7 +12,6 @@ private:
 public:
 	HumanB(void);
 	~HumanB(void);
-
 	void attack(void);
 };
 

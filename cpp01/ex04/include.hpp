@@ -2,5 +2,7 @@
 #define INCLUDE_HPP
 
 #include <iostream>
+#include <fstream>
+#include <string>
 
 #endif

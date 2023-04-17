@@ -16,6 +16,7 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
+	rm -f LoremIpsum.replace
 
 re: fclean all
 

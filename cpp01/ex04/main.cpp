@@ -2,11 +2,10 @@
 
 int main()
 {
-	std::fstream fi, fo;
+	std::string file = "LoremIpsum";
+	std::ifstream fi(file);
+	std::ofstream fo(file + ".replace");
 	std::string buff;
-
-	fi.open("LoremIpsum", std::fstream::in);
-	fo.open("LoremIpsum.replace", std::fstream::out);
 
 	if (!fi.is_open() && !fo.is_open()) 
 	{
@@ -16,6 +15,10 @@ int main()
 
 	while (getline(fi, buff))
 
+	for (size_t i = 0; i < buff.size(); i++)
+	{
+		fo << buff[i];
+	}
 	std::cout << buff << std::endl;
 	fi.close();
 	fo.close();

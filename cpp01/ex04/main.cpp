@@ -1,6 +1,6 @@
 #include "include.hpp"
 
-int main(int argc, char *argv[])
+/*int main(int argc, char *argv[])
 {
 	if (argc != 4)
 	{
@@ -20,34 +20,33 @@ int main(int argc, char *argv[])
 	}
 
 	while (getline(fi, buff))
-
-	for (size_t i = 0; i < buff.size(); i++)
 	{
-		if (buff[i] == s1[0])
+		for (size_t i = 0; i < buff.size(); i++)
 		{
-			aux = i;
-			j = 0;
-			while (j < s1.size())
+			if (buff[i] == s1[0])
 			{
-				if (buff[aux] != s1[j])
-					break ;
-				aux++;
-				j++;
+				aux = i;
+				j = 0;
+				while (j < s1.size())
+				{
+					if (buff[aux] != s1[j])
+						break ;
+					aux++;
+					j++;
+				}
+				if (j == s1.size())
+				{
+					fo << s2;
+					i += s1.size();
+				}
 			}
-			if (j == s1.size())
-			{
-				fo << s2;
-				i += s1.size();
-			}
+			fo << buff[i];
 		}
-		fo << buff[i];
 	}
 	fi.close();
 	fo.close();
 	return (0);
-}
-
-/*#include "include.hpp"
+}*/
 
 int main(int argc, char *argv[])
 {
@@ -57,10 +56,11 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 	std::string file = argv[1];
-	std::string buff, s1 = argv[2], s2 = argv[3];
+	std::string inString, outString, s1 = argv[2], s2 = argv[3];
+	std::stringstream buff;
 	std::ifstream fi(file);
-	std::ofstream fo(file + ".replace");
-	size_t find, i, j;
+	std::ofstream fo(file + (std::string)".replace");
+	size_t i = 0;
 
 	if (!fi.is_open() && !fo.is_open()) 
 	{
@@ -68,21 +68,22 @@ int main(int argc, char *argv[])
         return (2);
 	}
 
-	while (getline(fi, buff))
+	buff << fi.rdbuf();
+	inString = buff.str();
 
-	i = 0;
-	j = 0;
-	while (buff.find(s1, i) != std::string::npos && s1.size() != 0)
+	while (1)
 	{
-		find = buff.find(s1, i);
-		fo << buff.substr(j, find);
-		j += find;
+		i = 0;
+		i = inString.find(s1, i);
+		if (i == std::string::npos)
+			break;
+		fo << inString.substr(0, i);
 		fo << s2;
-		j += s1.size();
-		i = j;
+		i += s1.size();
+		inString = inString.substr(i);
 	}
-	fo << buff.substr(j);
+	fo << inString;
 	fi.close();
 	fo.close();
 	return (0);
-}*/
+}

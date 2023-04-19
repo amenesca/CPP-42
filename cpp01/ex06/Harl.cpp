@@ -26,35 +26,32 @@ void Harl::error(void) {
 
 void Harl::complain(std::string level) {
 
-	int i = -1;	
-	void (Harl::*function[4])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 	std::string badclient[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	int i = -1;
 
 	while (i != 4 && badclient[++i] != level) {}
 
 	switch (i) {
-		case(4):
-			return;
-			break;
-	}
-
-	std::cout << "[ " << badclient[i] << " ]" << std::endl;
-	while (i < 4) {
-		switch (i) {
 			case(0):
-				(this->*function[i])();
-				break;
+				std::cout << "[ " << badclient[0] << " ]" << std::endl;
+				this->debug();
+				std::cout << std::endl;
 			case(1):
-				(this->*function[i])();
-				break;
+				std::cout << "[ " << badclient[1] << " ]" << std::endl;
+				this->info();
+				std::cout << std::endl;
 			case(2):
-				(this->*function[i])();
-				break;
+				std::cout << "[ " << badclient[2] << " ]" << std::endl;
+				this->warning();
+				std::cout << std::endl;
 			case(3):
-				(this->*function[i])();
+				std::cout << "[ " << badclient[2] << " ]" << std::endl;
+				this->error();
+				std::cout << std::endl;
 				break;
-		}
-		i++;
+			default:
+				std::cout << "[ Probably complaining about insignificant problem ]" << std::endl;
+				return;
 	}
 	return ;
 }

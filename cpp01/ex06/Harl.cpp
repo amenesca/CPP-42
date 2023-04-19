@@ -32,11 +32,24 @@ void Harl::complain(std::string level) {
 
 	while (i != 4 && badclient[++i] != level) {}
 
-	switch(i) {
-		case(4):
-			return;
-			break;
-	}
+	std::cout << "[ " << badclient[i] << " ]" << std::endl;
 
-	return (this->*function[i])();
+	while (i < 4) {
+		switch (i) {
+			case(0):
+				(this->*function[i])();
+				break;
+			case(1):
+				(this->*function[i])();
+				break;
+			case(2):
+				(this->*function[i])();
+				break;
+			case(3):
+				(this->*function[i])();
+				break;
+		}
+		i++;
+	}
+	return ;
 }

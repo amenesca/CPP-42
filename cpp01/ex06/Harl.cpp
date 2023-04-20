@@ -45,7 +45,7 @@ void Harl::complain(std::string level) {
 				this->warning();
 				std::cout << std::endl;
 			case(3):
-				std::cout << "[ " << badclient[2] << " ]" << std::endl;
+				std::cout << "[ " << badclient[3] << " ]" << std::endl;
 				this->error();
 				std::cout << std::endl;
 				break;

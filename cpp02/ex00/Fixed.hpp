@@ -11,7 +11,7 @@ class Fixed {
   
   public:
     Fixed();
-    Fixed(int fpoint);
+    Fixed(Fixed const& fixed);
     Fixed& operator=(Fixed const& fixed);
     ~Fixed();
 

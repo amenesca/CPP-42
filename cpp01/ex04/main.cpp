@@ -56,11 +56,15 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 	std::string file = argv[1];
+	std::string file_out = file + ".replace";
 	std::string inString, outString, s1 = argv[2], s2 = argv[3];
 	std::stringstream buff;
-	std::ifstream fi(file);
-	std::ofstream fo(file + (std::string)".replace");
+	std::ifstream fi;
+	std::ofstream fo;
 	size_t i = 0;
+
+	fi.open(file.c_str(), std::fstream::in);
+	fo.open(file_out.c_str(), std::fstream::out);
 
 	if (!fi.is_open() && !fo.is_open()) 
 	{

@@ -18,6 +18,19 @@ Fixed::~Fixed(void) {
   std::cout << "Destructor called" << std::endl;
 }
 
+float Fixed::toFloat(void) const {
+	return (static_cast<float>(this->value) / (1 << this->frac_bits));
+}
+
+int Fixed::toInt(void) const {
+	return (static_cast<int>(this->value) >> this->frac_bits);
+}
+
+std::ostream& operator<<(std::ostream& os, Fixed const& fixed) {
+	os << fixed.toFloat();
+	return os;
+}
+
 int Fixed::getRawBits(void) const {
   std::cout << "getRawBits member function called" << std::endl;
   return(this->value);
@@ -25,8 +38,4 @@ int Fixed::getRawBits(void) const {
 
 void Fixed::setRawBits(int const raw) {
   this->value = raw;
-}
-
-float Fixed::toFloat(void) {
-
 }

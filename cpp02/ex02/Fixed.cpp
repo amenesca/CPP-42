@@ -26,6 +26,15 @@ int Fixed::toInt(void) const {
 	return (static_cast<int>(this->fpoint) >> this->frac_bits);
 }
 
+int Fixed::getRawBits(void) const {
+  std::cout << "getRawBits member function called" << std::endl;
+  return(this->fpoint);
+}
+
+void Fixed::setRawBits(int const raw) {
+  this->fpoint = raw;
+}
+
 Fixed& Fixed::operator=(Fixed const& fixed) {
   std::cout << "Copy assignment operator called" << std::endl;
   if (this != &fixed) {
@@ -39,11 +48,44 @@ std::ostream& operator<<(std::ostream& os, Fixed const& fixed) {
 	return os;
 }
 
-int Fixed::getRawBits(void) const {
-  std::cout << "getRawBits member function called" << std::endl;
-  return(this->fpoint);
+bool Fixed::operator>(Fixed const& fixed) const {
+  if (this->fpoint > fixed.fpoint)
+    return (true);
+  else
+    return (false);
 }
 
-void Fixed::setRawBits(int const raw) {
-  this->fpoint = raw;
+bool Fixed::operator<(Fixed const& fixed) const {
+  if (this->fpoint < fixed.fpoint)
+    return (true);
+  else
+    return (false);
+}
+
+bool Fixed::operator>=(Fixed const& fixed) const {
+  if (this->fpoint > fixed.fpoint || this->fpoint == fixed.fpoint)
+    return (true);
+  else
+    return (false);
+}
+
+bool Fixed::operator<=(Fixed const& fixed) const {
+  if (this->fpoint < fixed.fpoint || this->fpoint == fixed.fpoint)
+    return (true);
+  else
+    return (false);
+}
+
+bool Fixed::operator==(Fixed const& fixed) const {
+  if (this->fpoint == fixed.fpoint)
+    return (true);
+  else
+    return (false);
+}
+
+bool Fixed::operator!=(Fixed const& fixed) const {
+  if (this->fpoint != fixed.fpoint)
+    return (true);
+  else
+    return (false);
 }

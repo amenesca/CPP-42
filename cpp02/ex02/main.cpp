@@ -4,16 +4,10 @@
 int main(void) {
 Fixed a(5.6f);
 Fixed b(5.5f);
+Fixed c;
 
-if (a > b)
-    std::cout << "a é maior que b" << std::endl;
-else
-    std::cout << "a não é maior que b" << std::endl;
+c = a + b;
 
-if (a < b)
-    std::cout << "a é menor que b" << std::endl;
-else
-    std::cout << "a não é menor que b" << std::endl;
-
+std::cout << c << std::endl;
 return (0);
 }

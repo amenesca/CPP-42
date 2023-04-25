@@ -89,3 +89,11 @@ bool Fixed::operator!=(Fixed const& fixed) const {
   else
     return (false);
 }
+
+Fixed Fixed::operator+(Fixed const& fixed) {
+  return (Fixed(this->fpoint + fixed.fpoint));
+}
+
+Fixed Fixed::operator-(Fixed const& fixed) {
+  return (Fixed(this->fpoint - fixed.fpoint));
+}

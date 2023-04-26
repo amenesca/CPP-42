@@ -91,9 +91,15 @@ bool Fixed::operator!=(Fixed const& fixed) const {
 }
 
 Fixed Fixed::operator+(Fixed const& fixed) {
-  return (Fixed(this->fpoint + fixed.fpoint));
+  Fixed plus;
+  
+  plus.setRawBits(this->getRawBits() + fixed.getRawBits());	
+  return (plus);
 }
 
 Fixed Fixed::operator-(Fixed const& fixed) {
-  return (Fixed(this->fpoint - fixed.fpoint));
+  Fixed minus;
+  
+  minus.setRawBits(this->getRawBits() - fixed.getRawBits());
+  return (minus);
 }

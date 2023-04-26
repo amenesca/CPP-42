@@ -6,7 +6,7 @@ Fixed a(5.6f);
 Fixed b(5.5f);
 Fixed c;
 
-c = a + b;
+c = b - a;
 
 std::cout << c << std::endl;
 return (0);

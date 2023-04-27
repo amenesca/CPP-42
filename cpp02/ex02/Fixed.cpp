@@ -3,7 +3,7 @@
 #include <cmath>
 
 Fixed::Fixed(void) : fpoint(0) {
-  std::cout << "Default constructor called" << std::endl;  
+//  std::cout << "Default constructor called" << std::endl;  
 }
 
 Fixed::Fixed(int const fpoint_int) {
@@ -15,7 +15,7 @@ Fixed::Fixed(float const fpoint_float) {
 }
 
 Fixed::~Fixed(void) {
-  std::cout << "Destructor called" << std::endl;
+ // std::cout << "Destructor called" << std::endl;
 }
 
 float Fixed::toFloat(void) const {
@@ -27,7 +27,7 @@ int Fixed::toInt(void) const {
 }
 
 int Fixed::getRawBits(void) const {
-  std::cout << "getRawBits member function called" << std::endl;
+//  std::cout << "getRawBits member function called" << std::endl;
   return(this->fpoint);
 }
 
@@ -36,7 +36,7 @@ void Fixed::setRawBits(int const raw) {
 }
 
 Fixed& Fixed::operator=(Fixed const& fixed) {
-  std::cout << "Copy assignment operator called" << std::endl;
+// std::cout << "Copy assignment operator called" << std::endl;
   if (this != &fixed) {
     fpoint = fixed.getRawBits();
   }
@@ -113,7 +113,61 @@ Fixed Fixed::operator*(Fixed const& fixed) {
 Fixed Fixed::operator/(Fixed const& fixed) {
 	Fixed div;
 
-	div.fpoint = (this->fpoint << frac_bits) / (fixed.fpoint << frac_bits);
-	div.fpoint = (div.fpoint << frac_bits);
+	div.fpoint = (this->fpoint << frac_bits) / (fixed.fpoint);
 	return (div);
+}
+
+Fixed& Fixed::operator++(void) {
+	this->fpoint++;
+	return (*this);
+}
+
+Fixed& Fixed::operator--(void) {
+	this->fpoint--;
+	return (*this);
+}
+
+Fixed Fixed::operator++(int) {
+	Fixed pos;
+
+	pos.setRawBits(this->fpoint);
+	this->fpoint++;
+	return(pos);
+}
+
+Fixed Fixed::operator--(int) {
+	Fixed pos;
+
+	pos.setRawBits(this->fpoint);
+	this->fpoint--;
+	return(pos);
+}
+
+Fixed&	Fixed::min(Fixed& a, Fixed& b) {
+
+	if (a.getRawBits() < b.getRawBits())
+		return a;
+	else
+		return b;
+}
+
+Fixed&	Fixed::max(Fixed& a, Fixed& b) {
+	if (a.getRawBits() > b.getRawBits())
+		return a;
+	else
+		return b;
+}
+
+Fixed const&	Fixed::min(Fixed const& a, Fixed const& b) {
+	if (a.getRawBits() < b.getRawBits())
+		return a;
+	else
+		return b;
+}
+
+Fixed const&	Fixed::max(Fixed const& a, Fixed const& b) {
+	if (a.getRawBits() > b.getRawBits())
+		return a;
+	else
+		return b;
 }

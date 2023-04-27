@@ -2,12 +2,9 @@
 #include "Fixed.hpp"
 
 int main(void) {
-Fixed a(5.6f);
-Fixed b(5.5f);
-Fixed c;
+Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
 
-c = b - a;
+std::cout << b << std::endl;
 
-std::cout << c << std::endl;
-return (0);
+return 0;
 }

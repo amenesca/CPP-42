@@ -103,3 +103,17 @@ Fixed Fixed::operator-(Fixed const& fixed) {
   minus.setRawBits(this->getRawBits() - fixed.getRawBits());
   return (minus);
 }
+
+Fixed Fixed::operator*(Fixed const& fixed) {
+	Fixed multi(static_cast<float>(this->getRawBits() * fixed.getRawBits()) / (1 << (2*frac_bits)));
+
+	return (multi);
+}
+
+Fixed Fixed::operator/(Fixed const& fixed) {
+	Fixed div;
+
+	div.fpoint = (this->fpoint << frac_bits) / (fixed.fpoint << frac_bits);
+	div.fpoint = (div.fpoint << frac_bits);
+	return (div);
+}

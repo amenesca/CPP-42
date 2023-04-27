@@ -3,6 +3,7 @@
 
 # include <ostream>
 # include <iostream>
+# include <cmath>
 
 class Fixed {
 

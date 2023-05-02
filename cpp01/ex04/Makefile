@@ -1,6 +1,6 @@
 NAME = sedisforloser
 
-SRC = main.cpp init_var.cpp
+SRC = main.cpp init_var.cpp open_files.cpp find_replace.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

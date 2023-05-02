@@ -8,7 +8,7 @@ bool init_var(std::string* fileIn, std::string* find, std::string* replace, char
   *replace = argv[3];
 
   if (fileIn->empty() || find->empty() || replace->empty()) {
-    std::cerr << "the args passed shall not be empty." << std::endl;
+    std::cerr << "The args passed shall not be empty." << std::endl;
     return (false);
   }
   return (true);

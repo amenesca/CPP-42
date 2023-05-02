@@ -3,7 +3,6 @@
 int main(int argc, char *argv[])
 {
 	std::string fileIn, find, replace, fileOut;
-//	std::stringstream buff;
 	std::ifstream fi;
 	std::ofstream fo;
   bool error;

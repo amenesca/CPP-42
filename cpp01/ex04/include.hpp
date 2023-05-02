@@ -6,4 +6,6 @@
 #include <string>
 #include <sstream>
 
+bool init_var(std::string* fileIn, std::string* find, std::string* replace, char* argv[]);
+
 #endif

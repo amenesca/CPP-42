@@ -1,78 +1,37 @@
 #include "include.hpp"
 
-/*int main(int argc, char *argv[])
-{
-	if (argc != 4)
-	{
-		std::cout << "Wrong arguments" << std::endl;
-		return (1);
-	}
-	std::string file = argv[1];
-	std::string buff, s1 = argv[2], s2 = argv[3];
-	std::ifstream fi(file);
-	std::ofstream fo(file + ".replace");
-	size_t aux, j;
-
-	if (!fi.is_open() && !fo.is_open()) 
-	{
-	    std::cout << "Error cannot open file" << std::endl;
-        return (2);
-	}
-
-	while (getline(fi, buff))
-	{
-		for (size_t i = 0; i < buff.size(); i++)
-		{
-			if (buff[i] == s1[0])
-			{
-				aux = i;
-				j = 0;
-				while (j < s1.size())
-				{
-					if (buff[aux] != s1[j])
-						break ;
-					aux++;
-					j++;
-				}
-				if (j == s1.size())
-				{
-					fo << s2;
-					i += s1.size();
-				}
-			}
-			fo << buff[i];
-		}
-	}
-	fi.close();
-	fo.close();
-	return (0);
-}*/
-
 int main(int argc, char *argv[])
 {
-	if (argc != 4)
-	{
-		std::cout << "Wrong arguments" << std::endl;
-		return (1);
-	}
-	std::string file = argv[1];
-	std::string file_out = file + ".replace";
-	std::string inString, outString, s1 = argv[2], s2 = argv[3];
-	std::stringstream buff;
+	std::string fileIn, find, replace, fileOut;
+//	std::stringstream buff;
 	std::ifstream fi;
 	std::ofstream fo;
-	size_t i = 0;
+  bool error;
 
-	fi.open(file.c_str(), std::fstream::in);
-	fo.open(file_out.c_str(), std::fstream::out);
+	if (argc != 4)
+	{
+		std::cerr << "sedisforloser only accepts 3 args, nor less, nor more." << std::endl;
+		return (1);
+	}
 
-	if (!fi.is_open() && !fo.is_open()) 
+  error = init_var(&fileIn, &find, &replace, argv);
+  
+  if (error == false)
+    return (-1);
+  
+  fileOut = fileIn + ".replace";
+
+	fi.open(fileIn.c_str(), std::fstream::in);
+
+	if (!fi.is_open() ) 
 	{
 	    std::cout << "Error cannot open file" << std::endl;
         return (2);
 	}
 
-	buff << fi.rdbuf();
+	fo.open(fileOut.c_str(), std::fstream::out);
+
+/*	buff << fi.rdbuf();
 	inString = buff.str();
 
 	while (1)
@@ -88,6 +47,6 @@ int main(int argc, char *argv[])
 	}
 	fo << inString;
 	fi.close();
-	fo.close();
+	fo.close();*/
 	return (0);
 }

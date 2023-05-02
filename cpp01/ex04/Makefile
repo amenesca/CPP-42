@@ -1,6 +1,6 @@
 NAME = sedisforloser
 
-SRC = main.cpp
+SRC = main.cpp init_var.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

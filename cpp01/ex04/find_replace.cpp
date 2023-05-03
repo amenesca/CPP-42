@@ -3,11 +3,11 @@
 
 void find_replace(std::string find, std::string replace, std::ifstream *fi, std::ofstream *fo)
 {
-  std::string inString;
-  std::stringstream buff;
-  size_t i;
+	std::string inString;
+	std::stringstream buff;
+	size_t i;
 
-  buff << fi->rdbuf();
+ 	buff << fi->rdbuf();
 	inString = buff.str();
 
 	while (1)

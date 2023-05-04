@@ -1,5 +1,4 @@
 #include "include.hpp"
-#include <fstream>
 
 bool open_files(std::string fileIn, std::string fileOut, std::ifstream* fi, std::ofstream* fo)
 {

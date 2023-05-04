@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 	if (argc != 4)
 	{
 		std::cerr << "sedisforloser only accepts 3 args, nor less, nor more." << std::endl;
-		return (1);
+		return (-1);
 	}
 	error = init_var(&fileIn, &find, &replace, argv);
 	if (error == false)

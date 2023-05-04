@@ -1,5 +1,4 @@
 #include "include.hpp"
-#include <sstream>
 
 void find_replace(std::string find, std::string replace, std::ifstream *fi, std::ofstream *fo)
 {

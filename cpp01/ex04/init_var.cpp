@@ -1,5 +1,4 @@
 #include "./include.hpp"
-#include <iostream>
 
 bool init_var(std::string* fileIn, std::string* find, std::string* replace, char* argv[])
 {

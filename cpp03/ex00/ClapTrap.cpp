@@ -17,8 +17,7 @@ void ClapTrap::attack(const std::string& target) {
 	 target << ", causing " << this->atackDamage <<\
 	 " points of damage!" << std::endl;
 	 
-		if (this->energyPoints < 0)
-			this->energyPoints = 0;
+	 	this->energyPoints--;
 		
 		std::cout << "ClapTrap " << this->name <<\
 	 " spent 1 energy point attacking " << target\
@@ -30,19 +29,19 @@ void ClapTrap::attack(const std::string& target) {
 		if (this->energyPoints == 0 && this->hitPoints > 0)
 		{
 			std::cout << "ClapTrap " << this->name <<\
-		 " hasn't enough energy points to take this action"\
+		 " hasn't enough energy points to atack"\
 		 << std::endl;
 		}
 		else if (this->energyPoints > 0 && this->hitPoints == 0)
 		{
 			std::cout << "ClapTrap " << this->name <<\
-		 " hasn't enough hit points to take this action"\
+		 " hasn't enough hit points to atack"\
 		 << std::endl;
 		}
 		else
 		{
 			std::cout << "ClapTrap " << this->name <<\
-		 " hasn't enough points to take this action"\
+		 " hasn't enough points to atack"\
 		 << std::endl;
 		}
 	}
@@ -70,8 +69,6 @@ void ClapTrap::beRepaired(unsigned int amount) {
 		 << " hit points" << std::endl; 
 		
 		this->energyPoints--;
-		if (this->energyPoints < 0)
-			this->energyPoints = 0;
 		
 		std::cout << "ClapTrap " << this->name <<\
 	 " spent 1 energy point being reapaired leaving with "\
@@ -82,19 +79,19 @@ void ClapTrap::beRepaired(unsigned int amount) {
 		if (this->energyPoints == 0 && this->hitPoints > 0)
 		{
 			std::cout << "ClapTrap " << this->name <<\
-		 " hasn't enough energy points to take this action"\
+		 " hasn't enough energy points to be repaired"\
 		 << std::endl;
 		}
 		else if (this->energyPoints > 0 && this->hitPoints == 0)
 		{
 			std::cout << "ClapTrap " << this->name <<\
-		 " hasn't enough hit points to take this action"\
+		 " hasn't enough hit points to be repaired"\
 		 << std::endl;
 		}
 		else
 		{
 			std::cout << "ClapTrap " << this->name <<\
-		 " hasn't enough points to take this action"\
+		 " hasn't enough points to be repaired"\
 		 << std::endl;
 		}
 	}

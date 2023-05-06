@@ -11,7 +11,7 @@ ClapTrap::~ClapTrap(void) {
 }
 
 void ClapTrap::attack(const std::string& target) {
-	if (this->energyPoints > 0)
+	if (this->energyPoints > 0 && this->hitPoints > 0)
 	{	
 		std::cout << "ClapTrap " << this->name << " attacks " <<\
 	 target << ", causing " << this->atackDamage <<\
@@ -26,14 +26,32 @@ void ClapTrap::attack(const std::string& target) {
 	}
 	else
 	{
-		std::cout << "ClapTrap " << this->name <<\
-	 " doesn't have enough energy points to take this action"\
-	 << std::endl;
+		if (this->energyPoints < 0 && this->hitPoints > 0)
+		{
+			std::cout << "ClapTrap " << this->name <<\
+		 " hasn't enough energy points to take this action"\
+		 << std::endl;
+		}
+		else if (this->energyPoints > 0 && this->hitPoints <= 0)
+		{
+			std::cout << "ClapTrap " << this->name <<\
+		 " hasn't enough hit points to take this action"\
+		 << std::endl;
+		}
+		else
+		{
+			std::cout << "ClapTrap " << this->name <<\
+		 " hasn't enough points to take this action"\
+		 << std::endl;
+		}
 	}
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
 	this->hitPoints -= (int)amount;
+
+	if (this->hitPoints < 0)
+		this->hitPoints = 0;
 	
 	std::cout << "ClapTrap " << this->name << " took "\
  << amount << " damage leaving him with " << this->hitPoints\
@@ -41,7 +59,7 @@ void ClapTrap::takeDamage(unsigned int amount) {
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
-	if (this->energyPoints > 0)
+	if (this->energyPoints > 0 && this->hitPoints > 0)
 	{
 		this->hitPoints += (int)amount;
 
@@ -58,8 +76,23 @@ void ClapTrap::beRepaired(unsigned int amount) {
 	}
 	else
 	{
-		std::cout << "ClapTrap " << this->name <<\
-	 "doesn't has enough energy points to take this action"\
-	 << std::endl;
+		if (this->energyPoints < 0 && this->hitPoints > 0)
+		{
+			std::cout << "ClapTrap " << this->name <<\
+		 " hasn't enough energy points to take this action"\
+		 << std::endl;
+		}
+		else if (this->energyPoints > 0 && this->hitPoints <= 0)
+		{
+			std::cout << "ClapTrap " << this->name <<\
+		 " hasn't enough hit points to take this action"\
+		 << std::endl;
+		}
+		else
+		{
+			std::cout << "ClapTrap " << this->name <<\
+		 " hasn't enough points to take this action"\
+		 << std::endl;
+		}
 	}
 }

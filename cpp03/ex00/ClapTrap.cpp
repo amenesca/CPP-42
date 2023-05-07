@@ -1,13 +1,37 @@
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap(void)
+{
+	std::cout << "Default Constructor Called" << std::endl;
+	return ;
+}
+
 ClapTrap::ClapTrap(std::string name) : name(name) , hitPoints(10) , energyPoints(10) , atackDamage(0) {
-	std::cout << this->name << ": Aaaaand... OPEN!" << std::endl;
+	std::cout << this->name << ": name constructor called" << std::endl;
 	return ;
 }
 
 ClapTrap::~ClapTrap(void) {
-	std::cout << this->name << ": Aaaaand... CLOSE." << std::endl;
+	std::cout << this->name << ": destructor called" << std::endl;
 	return ;
+}
+
+ClapTrap::ClapTrap(ClapTrap const& copy)
+{
+	std::cout << this->name << ": copy constructor called" << std::endl;
+	*this = copy;
+	return ;
+}
+
+ClapTrap& ClapTrap::operator=(ClapTrap const& equal)
+{
+	std::cout << this->name << ": copy assignment operator called" << std::endl;
+	this->energyPoints = equal.energyPoints;
+	this->hitPoints = equal.hitPoints;
+	this->name = equal.name;
+	this->atackDamage = equal.atackDamage;
+	
+	return *this;
 }
 
 void ClapTrap::attack(const std::string& target) {

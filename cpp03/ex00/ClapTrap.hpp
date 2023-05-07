@@ -13,8 +13,12 @@ class ClapTrap {
     int atackDamage;
 
   public:
-    ClapTrap(std::string name);
+	ClapTrap();
     ~ClapTrap(void);
+    ClapTrap(std::string name);
+	ClapTrap(ClapTrap const &copy);
+	ClapTrap &operator=(ClapTrap const &equal);
+	
 
     void attack(const std::string& target);
     void takeDamage(unsigned int amount);

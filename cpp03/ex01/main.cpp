@@ -1,8 +1,8 @@
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main() 
 {
-	ClapTrap Robo("Genos");
+	ScavTrap Robo("Genos");
 	for (int i = 0; i < 11; i++)
 		Robo.attack("Robo_assassino");
 	Robo.takeDamage(50);

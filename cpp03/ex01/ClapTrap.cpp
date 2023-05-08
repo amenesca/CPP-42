@@ -2,11 +2,19 @@
 
 ClapTrap::ClapTrap(void)
 {
+	this->name = "sometrap";
+	this->hitPoints = 10;
+	this->energyPoints = 10;
+	this->atackDamage = 0;
 	std::cout << "ClapTrap Default Constructor Called" << std::endl;
 	return ;
 }
 
-ClapTrap::ClapTrap(std::string name) : name(name) , hitPoints(10) , energyPoints(10) , atackDamage(0) {
+ClapTrap::ClapTrap(std::string name) {
+	this->name = name;
+	this->hitPoints = 10;
+	this->energyPoints = 10;
+	this->atackDamage = 0;
 	std::cout << this->name << ": ClapTrap name constructor called" << std::endl;
 	return ;
 }

@@ -13,8 +13,8 @@ FlagTrap::FlagTrap(void)
 FlagTrap::FlagTrap(std::string name) {
 	this->name = name;
 	this->hitPoints = 100;
-	this->energyPoints = 50;
-	this->atackDamage = 20;
+	this->energyPoints = 100;
+	this->atackDamage = 30;
 	std::cout << this->name << ": FlagTrap name constructor called" << std::endl;
 	
 	return ;

@@ -27,18 +27,18 @@ FlagTrap::~FlagTrap(void) {
 
 FlagTrap::FlagTrap(FlagTrap const& copy) : ClapTrap(copy)
 {
-	std::cout << ": FlagTrap copy constructor called" << std::endl;
 	*this = copy;
+	std::cout << ": FlagTrap copy constructor called" << std::endl;
 	return ;
 }
 
 FlagTrap& FlagTrap::operator=(FlagTrap const& equal)
 {
-	std::cout << this->name << ": FlagTrap copy assignment operator called" << std::endl;
 	this->energyPoints = equal.energyPoints;
 	this->hitPoints = equal.hitPoints;
 	this->name = equal.name;
 	this->atackDamage = equal.atackDamage;
+	std::cout << this->name << ": FlagTrap copy assignment operator called" << std::endl;
 	
 	return *this;
 }

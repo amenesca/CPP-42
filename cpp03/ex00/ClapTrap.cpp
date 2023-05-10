@@ -20,13 +20,13 @@ ClapTrap::ClapTrap(std::string name) {
 }
 
 ClapTrap::~ClapTrap(void) {
-	std::cout << this->name << ":ClapTrap destructor called" << std::endl;
+	std::cout << this->name << ": ClapTrap destructor called" << std::endl;
 	return ;
 }
 
 ClapTrap::ClapTrap(ClapTrap const& copy)
 {
-	std::cout << this->name << ":ClapTrap copy constructor called" << std::endl;
+	std::cout << this->name << ": ClapTrap copy constructor called" << std::endl;
 	*this = copy;
 	return ;
 }

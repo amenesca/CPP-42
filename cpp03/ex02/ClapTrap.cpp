@@ -20,20 +20,20 @@ ClapTrap::ClapTrap(std::string name) {
 }
 
 ClapTrap::~ClapTrap(void) {
-	std::cout << this->name << ":ClapTrap destructor called" << std::endl;
+	std::cout << this->name << ": ClapTrap destructor called" << std::endl;
 	return ;
 }
 
 ClapTrap::ClapTrap(ClapTrap const& copy)
 {
-	std::cout << this->name << ":ClapTrap copy constructor called" << std::endl;
+	std::cout << this->name << ": ClapTrap copy constructor called" << std::endl;
 	*this = copy;
 	return ;
 }
 
 ClapTrap& ClapTrap::operator=(ClapTrap const& equal)
 {
-	std::cout << this->name << ":ClapTrap copy assignment operator called" << std::endl;
+	std::cout << this->name << ": ClapTrap copy assignment operator called" << std::endl;
 	this->energyPoints = equal.energyPoints;
 	this->hitPoints = equal.hitPoints;
 	this->name = equal.name;

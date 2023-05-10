@@ -21,20 +21,20 @@ FlagTrap::FlagTrap(std::string name) {
 }
 
 FlagTrap::~FlagTrap(void) {
-	std::cout << this->name << ":FlagTrap destructor called" << std::endl;
+	std::cout << this->name << ": FlagTrap destructor called" << std::endl;
 	return ;
 }
 
 FlagTrap::FlagTrap(FlagTrap const& copy) : ClapTrap(copy)
 {
-	std::cout << ":FlagTrap copy constructor called" << std::endl;
+	std::cout << ": FlagTrap copy constructor called" << std::endl;
 	*this = copy;
 	return ;
 }
 
 FlagTrap& FlagTrap::operator=(FlagTrap const& equal)
 {
-	std::cout << this->name << ":FlagTrap copy assignment operator called" << std::endl;
+	std::cout << this->name << ": FlagTrap copy assignment operator called" << std::endl;
 	this->energyPoints = equal.energyPoints;
 	this->hitPoints = equal.hitPoints;
 	this->name = equal.name;
@@ -44,5 +44,5 @@ FlagTrap& FlagTrap::operator=(FlagTrap const& equal)
 }
 
 void FlagTrap::highFivesGuys(void) {
-	std::cout << this->name << "Is requesting a positive high five!" << std::endl;
+	std::cout << this->name << " is requesting a positive high five!" << std::endl;
 }

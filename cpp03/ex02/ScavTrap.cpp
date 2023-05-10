@@ -21,20 +21,20 @@ ScavTrap::ScavTrap(std::string name) {
 }
 
 ScavTrap::~ScavTrap(void) {
-	std::cout << this->name << ":ScavTrap destructor called" << std::endl;
+	std::cout << this->name << ": ScavTrap destructor called" << std::endl;
 	return ;
 }
 
 ScavTrap::ScavTrap(ScavTrap const& copy) : ClapTrap(copy)
 {
-	std::cout << ":ScavTrap copy constructor called" << std::endl;
+	std::cout << ": ScavTrap copy constructor called" << std::endl;
 	*this = copy;
 	return ;
 }
 
 ScavTrap& ScavTrap::operator=(ScavTrap const& equal)
 {
-	std::cout << this->name << ":ScavTrap copy assignment operator called" << std::endl;
+	std::cout << this->name << ": ScavTrap copy assignment operator called" << std::endl;
 	this->energyPoints = equal.energyPoints;
 	this->hitPoints = equal.hitPoints;
 	this->name = equal.name;

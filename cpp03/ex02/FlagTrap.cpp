@@ -44,5 +44,8 @@ FlagTrap& FlagTrap::operator=(FlagTrap const& equal)
 }
 
 void FlagTrap::highFivesGuys(void) {
-	std::cout << this->name << " is requesting a positive high five!" << std::endl;
+	if (this->hitPoints > 0)
+		std::cout << this->name << " is requesting a positive high five!" << std::endl;
+	else
+		std::cout << this->name << " is dead and can't request a positive high five!" << std::endl;
 }

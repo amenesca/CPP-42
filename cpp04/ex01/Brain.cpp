@@ -1,4 +1,5 @@
 #include "Brain.hpp"
+#include <sstream>
 
 Brain::Brain(void) {
 	std::cout << "Brain default constructor called." << std::endl;
@@ -26,15 +27,24 @@ Brain& Brain::operator=(Brain const& equal)
 }
 
 void Brain::setIdeas(std::string type) {
+
+	std::stringstream ss;
+
 	if (type == "Dog")
 	{
 		for (int i = 0; i < 100; i++)
-			this->ideas[i] = "bone " + i;
+		{
+			ss << i;
+			this->ideas[i] = "bone " + ss.str();
+		}
 	}
 	if (type == "Cat")
 	{
 		for (int i = 0; i < 100; i++)
-			this->ideas[i] = "purr " + i;
+		{
+			ss << i;
+			this->ideas[i] = "purr " + ss.str();
+		}
 	}
 
 	return ;

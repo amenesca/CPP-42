@@ -3,21 +3,21 @@
 
 #include <iostream>
 
-class AAnimal {
+class Animal {
 
 	protected:
 		std::string type;
 
 	public:
-		AAnimal(void);
-		AAnimal(std::string type);
-		virtual ~AAnimal(void);
-		AAnimal(AAnimal const &copy);
-		AAnimal &operator=(AAnimal const &equal);
+		Animal(void);
+		Animal(std::string type);
+		virtual ~Animal(void);
+		Animal(Animal const &copy);
+		Animal &operator=(Animal const &equal);
 
 		std::string getType(void) const ;
 
-		virtual void makeSound(void) const = 0 ;
+		virtual void makeSound(void) const ;
 
 };
 

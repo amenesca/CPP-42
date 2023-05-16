@@ -1,6 +1,7 @@
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
+#include "Animal.hpp"
 
 int main() {
 	{
@@ -16,7 +17,6 @@ int main() {
 	}
 
 	AAnimal *animal[10];
-//	AAnimal *animal_error = new AAnimal();
 
 	for (int i = 0; i < 5; i++)
 	{
@@ -49,5 +49,11 @@ int main() {
 	{
 			delete animal[i];
 			std::cout << std::endl;
+	}
+
+	{
+	/*	AAnimal *animal_abs = new AAnimal(); Error instance
+		Animal *animal = new Animal(); Non Error instance
+		delete animal;*/
 	}
 }

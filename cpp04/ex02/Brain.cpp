@@ -1,5 +1,4 @@
 #include "Brain.hpp"
-#include <sstream>
 
 Brain::Brain(void) {
 	std::cout << "Brain default constructor called." << std::endl;

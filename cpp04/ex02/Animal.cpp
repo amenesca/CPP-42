@@ -1,36 +1,41 @@
 #include "Animal.hpp"
 
-AAnimal::AAnimal(void) {
-	std::cout << "AAnimal default constructor called." << std::endl;
+Animal::Animal(void) {
+	std::cout << "Animal default constructor called." << std::endl;
 	this->type = "default";
 	return ;
 }
 
-AAnimal::AAnimal(std::string type) {
-	std::cout << "AAnimal type constructor called." << std::endl;
+Animal::Animal(std::string type) {
+	std::cout << "Animal type constructor called." << std::endl;
 	this->type = type;
 	return ;
 }
 
-AAnimal::~AAnimal(void) {
-	std::cout << "AAnimal default destructor called." << std::endl;
+Animal::~Animal(void) {
+	std::cout << "Animal default destructor called." << std::endl;
 	return ;
 }
 
-AAnimal::AAnimal(AAnimal const& copy)
+Animal::Animal(Animal const& copy)
 {
-	std::cout << "AAnimal copy constructor called" << std::endl;
+	std::cout << "Animal copy constructor called" << std::endl;
 	*this = copy;
 	return ;
 }
 
-AAnimal& AAnimal::operator=(AAnimal const& equal)
+Animal& Animal::operator=(Animal const& equal)
 {
-	std::cout << "AAnimal copy assignment operator called" << std::endl;
+	std::cout << "Animal copy assignment operator called" << std::endl;
 	this->type = equal.type;
 	return *this;
 }
 
-std::string AAnimal::getType(void) const {
+std::string Animal::getType(void) const {
 	return (this->type);
+}
+
+void Animal::makeSound(void) const {
+	std::cout << "undefined sound" << std::endl;
+	return ;
 }

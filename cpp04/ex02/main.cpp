@@ -16,6 +16,7 @@ int main() {
 	}
 
 	AAnimal *animal[10];
+//	AAnimal *animal_error = new AAnimal();
 
 	for (int i = 0; i < 5; i++)
 	{
@@ -35,10 +36,12 @@ int main() {
 	}
 
 	Cat cat = *(Cat *)animal[5];
+	std::cout << std::endl;
 	cat.think();
 	std::cout << std::endl;
 
 	Dog dog(*(Dog *)animal[0]);
+	std::cout << std::endl;
 	dog.think();
 	std::cout << std::endl;
 

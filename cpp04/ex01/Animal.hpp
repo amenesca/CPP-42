@@ -10,6 +10,7 @@ class Animal {
 
 	public:
 		Animal(void);
+		Animal(std::string type);
 		virtual ~Animal(void);
 		Animal(Animal const &copy);
 		Animal &operator=(Animal const &equal);

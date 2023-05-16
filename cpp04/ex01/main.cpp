@@ -28,12 +28,23 @@ int main() {
 		std::cout << std::endl;
 	}
 
-//	Animal* Dog;
-//	Cat *cat;
+	for (int i = 0; i < 10; i++)
+	{
+		std::cout << animal[i]->getType() << std::endl;
+		std::cout << std::endl;
+	}
+
+	Cat cat = *(Cat *)animal[5];
+	cat.think();
+	std::cout << std::endl;
+
+	Dog dog(*(Dog *)animal[0]);
+	dog.think();
+	std::cout << std::endl;
 
 	for (int i = 0; i < 10; i++)
 	{
-		delete animal[i];
-		std::cout << std::endl;
+			delete animal[i];
+			std::cout << std::endl;
 	}
 }

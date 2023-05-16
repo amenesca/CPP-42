@@ -12,6 +12,7 @@ class Dog : public Animal {
 
 	public:
 		Dog(void);
+		Dog(std::string type);
 		~Dog(void);
 		Dog(Dog const &copy);
 		Dog &operator=(Dog const &equal);

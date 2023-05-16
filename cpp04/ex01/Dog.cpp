@@ -8,6 +8,14 @@ Dog::Dog(void) {
 	return ;
 }
 
+Dog::Dog(std::string type) {
+	std::cout << "Dog type constructor called." << std::endl;
+	this->type = type;
+	this->brain = new Brain();
+	this->brain->setIdeas(this->type);
+	return ;
+}
+
 Dog::~Dog(void) {
 	std::cout << "Dog default destructor called." << std::endl;
 	delete this->brain;
@@ -25,7 +33,7 @@ Dog& Dog::operator=(Dog const& equal)
 {
 	std::cout << "Dog copy assignment operator called" << std::endl;
 	this->type = equal.type;
-	this->brain = equal.brain;
+	this->brain = new Brain(*equal.brain);
 	return *this;
 }
 

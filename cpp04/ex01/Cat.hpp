@@ -12,6 +12,7 @@ class Cat : public Animal {
 
 	public:
 		Cat(void);
+		Cat(std::string type);
 		~Cat(void);
 		Cat(Cat const &copy);
 		Cat &operator=(Cat const &equal);

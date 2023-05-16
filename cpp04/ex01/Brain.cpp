@@ -36,6 +36,7 @@ void Brain::setIdeas(std::string type) {
 		{
 			ss << i;
 			this->ideas[i] = "bone " + ss.str();
+			ss.str("");
 		}
 	}
 	if (type == "Cat")
@@ -44,6 +45,7 @@ void Brain::setIdeas(std::string type) {
 		{
 			ss << i;
 			this->ideas[i] = "purr " + ss.str();
+			ss.str("");
 		}
 	}
 

@@ -8,6 +8,14 @@ Cat::Cat(void) {
 	return ;
 }
 
+Cat::Cat(std::string type) {
+	std::cout << "Cat type constructor called." << std::endl;
+	this->type = type;
+	this->brain = new Brain();
+	this->brain->setIdeas(this->type);
+	return ;
+}
+
 Cat::~Cat(void) {
 	std::cout << "Cat default destructor called." << std::endl;
 	delete this->brain;
@@ -25,7 +33,7 @@ Cat& Cat::operator=(Cat const& equal)
 {
 	std::cout << "Cat copy assignment operator called" << std::endl;
 	this->type = equal.type;
-	this->brain = equal.brain;
+	this->brain = new Brain(*equal.brain);
 	return *this;
 }
 

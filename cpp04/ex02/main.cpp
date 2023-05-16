@@ -51,9 +51,9 @@ int main() {
 			std::cout << std::endl;
 	}
 
-	{
-	/*	AAnimal *animal_abs = new AAnimal(); Error instance
+	/*{
+		AAnimal *animal_abs = new AAnimal(); Error instance
 		Animal *animal = new Animal(); Non Error instance
-		delete animal;*/
-	}
+		delete animal;
+	}*/
 }

@@ -6,6 +6,12 @@ Dog::Dog(void) {
 	return ;
 }
 
+Dog::Dog(std::string type) {
+	std::cout << "Dog type constructor called." << std::endl;
+	this->type = type;
+	return ;
+}
+
 Dog::~Dog(void) {
 	std::cout << "Dog default destructor called." << std::endl;
 	return ;

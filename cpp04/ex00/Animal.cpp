@@ -6,6 +6,12 @@ Animal::Animal(void) {
 	return ;
 }
 
+Animal::Animal(std::string type) {
+	std::cout << "Animal type constructor called." << std::endl;
+	this->type = type;
+	return ;
+}
+
 Animal::~Animal(void) {
 	std::cout << "Animal default destructor called." << std::endl;
 	return ;

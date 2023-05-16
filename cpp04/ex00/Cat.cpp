@@ -6,6 +6,12 @@ Cat::Cat(void) {
 	return ;
 }
 
+Cat::Cat(std::string type) {
+	std::cout << "Cat type constructor called." << std::endl;
+	this->type = type;
+	return ;
+}
+
 Cat::~Cat(void) {
 	std::cout << "Cat default destructor called." << std::endl;
 	return ;

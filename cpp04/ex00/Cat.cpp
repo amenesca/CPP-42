@@ -26,6 +26,6 @@ Cat& Cat::operator=(Cat const& equal)
 }
 
 void Cat::makeSound(void) const {
-	std::cout << "Mieoahuesheuhe" << std::endl;
+	std::cout << "Mieoa" << std::endl;
 	return ;
 }

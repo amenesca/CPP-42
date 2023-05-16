@@ -17,7 +17,7 @@ class Cat : public Animal {
 		Cat(Cat const &copy);
 		Cat &operator=(Cat const &equal);
 
-		void makeSound(void) const;
+		virtual void makeSound(void) const;
 		void think(void) const;
 
 };

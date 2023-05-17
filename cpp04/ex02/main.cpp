@@ -52,8 +52,8 @@ int main() {
 	}
 
 	/*{
-		AAnimal *animal_abs = new AAnimal(); Error instance
-		Animal *animal = new Animal(); Non Error instance
+		AAnimal *animal_abs = new AAnimal(); //Error instance
+		Animal *animal = new Animal();// Non Error instance
 		delete animal;
 	}*/
 }

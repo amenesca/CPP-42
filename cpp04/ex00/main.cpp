@@ -7,7 +7,7 @@
 int main() {
 	std::cout << std::endl;
 	{
-		const Animal* meta = new Animal(); 
+		const Animal* meta = new Animal();
 		const Animal* dog = new Dog();
 		const Animal* cat = new Cat();
 
@@ -15,6 +15,7 @@ int main() {
 		dog->makeSound();
 		std::cout << cat->getType()  << " " << std::endl;
 		cat->makeSound();
+		std::cout << meta->getType()  << " " << std::endl;
 		meta->makeSound();
 
 		delete meta;
@@ -28,6 +29,7 @@ int main() {
 
 		std::cout << cat->getType()  << " " << std::endl;
 		cat->makeSound();
+		std::cout << meta->getType()  << " " << std::endl;
 		meta->makeSound();
 
 		delete meta;

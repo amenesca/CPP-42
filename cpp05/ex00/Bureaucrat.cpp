@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 11:41:01 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/11 13:17:37 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/11 17:45:26 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Bureaucrat::Bureaucrat(void)
 
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name)
 {
-	std::cout << "Bureaucrat assignment constructor called." << std::endl;
+	std::cout << "Bureaucrat:" << _name << " assignment constructor called." << std::endl;
 	if (grade <= 0)
 		throw GradeTooHighException();
 	if (grade >= 151)

@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/11 11:41:22 by amenesca          #+#    #+#             */
+/*   Updated: 2023/07/11 13:22:25 by amenesca         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 
 int main(void)
 {
-    Bureaucrat *bureaucrat = new Bureaucrat("Bureaucrat", 150);
-    std::cout << *bureaucrat << std::endl;
-    delete bureaucrat;
+    Bureaucrat bob("bob", 151);
+//	std::cout << bob << std::endl;
+	return (0);
 }

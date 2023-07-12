@@ -13,7 +13,7 @@
 #include "./Bureaucrat.hpp"
 
 // Forma canônica / Contrutores e Destrutor
-Bureaucrat::Bureaucrat(void)
+Bureaucrat::Bureaucrat(void) : _name("default"), _grade(150)
 {
 	std::cout << "Bureaucrat default constructor called." << std::endl;
 	return ;

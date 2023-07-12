@@ -13,8 +13,10 @@
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
+#include <ostream>
+#include <string>
 #include <iostream>
-#include <stdexcept>
+#include <exception>
 
 class Bureaucrat {
     private:

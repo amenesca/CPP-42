@@ -29,8 +29,8 @@ class Form {
     // Getters
         const std::string   getName(void) const;
         bool                getSigned(void) const;
-        int                 getGradeToSign(void) const;
-        int                 getGradeToExecute(void) const;
+        int           getGradeToSign(void) const;
+        int           getGradeToExecute(void) const;
 
 };
 

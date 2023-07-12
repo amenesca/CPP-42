@@ -46,7 +46,7 @@ Bureaucrat::~Bureaucrat(void)
 // Sobrecarga de operadores
 Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &bureaucrat)
 {
-	std::cout << "Bureaucrat copy assignment operator overload called." << std::endl;
+	std::cout << "Bureaucrat copy operator called." << std::endl;
 	if (this != &bureaucrat)
 		_grade = bureaucrat._grade;
 	return (*this);

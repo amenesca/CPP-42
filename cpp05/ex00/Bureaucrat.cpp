@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 11:41:01 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/12 13:07:24 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/15 11:07:54 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Bureaucrat::Bureaucrat(void) : _name("default"), _grade(150)
 
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name)
 {
-	std::cout << "Bureaucrat:" << _name << " assignment constructor called." << std::endl;
+	std::cout << "Bureaucrat: " << _name << " assignment constructor called." << std::endl;
 	if (grade <= 0)
 		throw GradeTooHighException();
 	if (grade >= 151)
@@ -30,7 +30,7 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name)
 	return ;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &bureaucrat)
+Bureaucrat::Bureaucrat(const Bureaucrat &bureaucrat) : _name(bureaucrat._name)
 {
 	std::cout << "Bureaucrat copy constructor called." << std::endl;
 	*this = bureaucrat;

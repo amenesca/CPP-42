@@ -3,7 +3,7 @@
 // Forma canônica / Contrutores e Destrutor
 
 Form::Form(void)\
- : _gradeToExecute(50), _gradeToSign(30),\
+ : _gradeToExecute(150), _gradeToSign(150),\
   _name("default"), _signed(0)
 {
     std::cout << "Form default constructor called." << std::endl;

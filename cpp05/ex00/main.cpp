@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 11:41:22 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/11 17:43:32 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/15 11:04:14 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,13 @@ int main(void)
 	{
 		std::cerr << e.what() << std::endl;
 	}
+
+	std::cout << std::endl;
+
+	Bureaucrat alan("Alan", 1);
+	std::cout << alan << std::endl;
+
+	Bureaucrat copy(alan);
+	std::cout << copy << std::endl;
 	return (0);
 }

@@ -13,13 +13,15 @@
 #include "./Bureaucrat.hpp"
 
 // Forma canônica / Contrutores e Destrutor
-Bureaucrat::Bureaucrat(void) : _name("default"), _grade(150)
+Bureaucrat::Bureaucrat(void)\
+ : _name("default"), _grade(150)
 {
 	std::cout << "Bureaucrat default constructor called." << std::endl;
 	return ;
 }
 
-Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name)
+Bureaucrat::Bureaucrat(const std::string &name, int grade)\
+ : _name(name)
 {
 	std::cout << "Bureaucrat: " << _name << " assignment constructor called." << std::endl;
 	if (grade <= 0)
@@ -30,7 +32,8 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name)
 	return ;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &bureaucrat) : _name(bureaucrat._name)
+Bureaucrat::Bureaucrat(const Bureaucrat &bureaucrat)\
+ : _name(bureaucrat._name)
 {
 	std::cout << "Bureaucrat copy constructor called." << std::endl;
 	*this = bureaucrat;
@@ -71,6 +74,19 @@ void	Bureaucrat::decreaseGrade(void)
 	if (_grade > 149)
 		throw GradeTooLowException();
 	_grade++;
+}
+
+void	Bureaucrat::signForm(Form &form)
+{
+	try 
+	{
+			form.beSigned(*this);
+			std::cout << this->_name << " signed " << form.getName() << std::endl;
+	}
+	catch (const std::exception &e) 
+	{
+		std::cout << _name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+	}
 }
 	
 // Getters

@@ -17,6 +17,7 @@
 #include <string>
 #include <iostream>
 #include <exception>
+#include "./Form.hpp"
 
 class Bureaucrat {
     private:
@@ -37,6 +38,7 @@ class Bureaucrat {
 	// Funções membro
 		void	increaseGrade(void);
 		void	decreaseGrade(void);
+		void	signForm(Form &form);
 	// Getters
 		const std::string	getName(void) const;
 		int					getGrade(void) const;
@@ -50,7 +52,6 @@ class Bureaucrat {
 				return ("Bureaucrat::exception : Grade is too high!");
 			}
 	};
-
 	class GradeTooLowException : public std::exception
 	{
 		public:

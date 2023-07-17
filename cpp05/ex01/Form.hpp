@@ -21,16 +21,32 @@ class Form {
         virtual ~Form(void); // destrutor virtual
 
     // Sobrecarga de Operador
-        Form    &operator=(const Form &form); // sobrecarga do operador de atribuição de cópia
 
+        Form    &operator=(const Form &form); // sobrecarga do operador de atribuição de cópia
     // Funções membro
+
         void    beSigned(const Bureaucrat &bureaucrat);
-        void    execute(const Bureaucrat &executor) const;
     // Getters
+
         const std::string   getName(void) const;
         bool                getSigned(void) const;
         int           getGradeToSign(void) const;
         int           getGradeToExecute(void) const;
+	//exceptions
+
+		class GradeTooHighException : public std::exception {
+			public:
+				virtual const char *what() const throw() {
+					return ("Form::exception grade is too high!");
+				}
+		};
+		class GradeTooLowException : public std::exception {
+			public:
+				virtual const char *what() const throw() {
+					return ("Form::exception grade is too low!");
+				}
+		};
+
 
 };
 

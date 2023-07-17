@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 11:41:11 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/11 18:01:07 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/11 13:24:13 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ class Bureaucrat {
 				return ("Bureaucrat::exception : Grade is too high!");
 			}
 	};
-
 	class GradeTooLowException : public std::exception
 	{
 		public:

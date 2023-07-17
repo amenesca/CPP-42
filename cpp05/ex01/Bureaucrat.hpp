@@ -6,19 +6,17 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 11:41:11 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/17 18:15:33 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/17 18:54:32 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
-#include <ostream>
-#include <string>
-#include <iostream>
-#include <exception>
-#include "./Form.hpp"
+# include <iostream>
+# include "./Form.hpp"
 
+class Form;
 class Bureaucrat {
     private:
     // atributos privados da classe
@@ -26,24 +24,20 @@ class Bureaucrat {
     	int					_grade;
 	
 	public:
-    // Forma canônica
-		Bureaucrat(void); // construtor padrão
-		Bureaucrat(const std::string &name, int grade); // construtor de atribuição
-		Bureaucrat(const Bureaucrat &bureaucrat); // construtor de cópia
-		virtual ~Bureaucrat(void); // destrutor virtual
+		Bureaucrat(void);
+		Bureaucrat(const std::string &name, int grade);
+		Bureaucrat(const Bureaucrat &bureaucrat);
+		virtual ~Bureaucrat(void);
 
-	// Sobrecarga de Operador
-		Bureaucrat	&operator=(const Bureaucrat &bureaucrat); // sobrecarga do operador de atribuição de cópia
+		Bureaucrat	&operator=(const Bureaucrat &bureaucrat);
 
-	// Funções membro
 		void	increaseGrade(void);
 		void	decreaseGrade(void);
 		void	signForm(Form &form);
-	// Getters
 		const std::string	getName(void) const;
 		int					getGrade(void) const;
 
-	// Exceptions
+
 	class GradeTooHighException : public std::exception
 	{
 		public:

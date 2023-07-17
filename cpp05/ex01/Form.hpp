@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/17 18:02:04 by amenesca          #+#    #+#             */
+/*   Updated: 2023/07/17 18:24:36 by amenesca         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FORM_HPP
 # define FORM_HPP
 
 # include <iostream>
 # include <string>
-# include "Bureaucrat.hpp"
 # include <exception>
+# include "./Bureaucrat.hpp"
 
 class Form {
     private:
@@ -46,8 +58,6 @@ class Form {
 					return ("Form::exception grade is too low!");
 				}
 		};
-
-
 };
 
 std::ostream    &operator<<(std::ostream &out, const Form &form);

@@ -6,13 +6,13 @@
 #    By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/11 11:41:25 by amenesca          #+#    #+#              #
-#    Updated: 2023/07/11 12:37:40 by amenesca         ###   ########.fr        #
+#    Updated: 2023/07/17 18:08:23 by amenesca         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = bureaucrat
 
-SRC = main.cpp Bureaucrat.cpp
+SRC = main.cpp Bureaucrat.cpp Form.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

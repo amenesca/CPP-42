@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 15:02:57 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/19 19:44:14 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/19 19:59:15 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class PresidentialPardonForm : public AForm
 		PresidentialPardonForm();
 		PresidentialPardonForm( PresidentialPardonForm const & src );
 		~PresidentialPardonForm();
+		PresidentialPardonForm(const std::string &target);
 
 		PresidentialPardonForm &		operator=( PresidentialPardonForm const & rhs );
 

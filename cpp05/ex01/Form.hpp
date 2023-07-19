@@ -6,13 +6,14 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 18:02:04 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/19 15:15:02 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/19 19:49:45 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FORM_HPP
 # define FORM_HPP
 
+# pragma once
 # include "./Bureaucrat.hpp"
 # include <iostream>
 

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 18:02:04 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/19 15:15:02 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/19 15:16:37 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,14 @@ class Form {
         const std::string   _name;
         const int           _gradeToSign;
         const int           _gradeToExecute;
-        bool                _signed;
+        bool				_signed;
     
 	public:
 	
         Form(void);
         Form(const std::string &name, int gradeToSign, int gradeToExecute);
         Form(const Form &form);
-        ~Form(void);
+        virtual ~Form(void);
 		
         Form	&operator=(const Form &form);
 		
@@ -39,8 +39,10 @@ class Form {
         bool getSigned(void) const;
         int getGradeToSign(void) const;
         int getGradeToExecute(void) const;
-
+        
 		void beSigned(const Bureaucrat &bureaucrat);
+		virtual void execute(Bureaucrat const & executor) const = 0;
+		
 		class GradeTooHighException : public std::exception {
 			public:
 				virtual const char *what() const throw() {

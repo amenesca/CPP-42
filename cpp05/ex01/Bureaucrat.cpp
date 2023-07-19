@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 11:41:01 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/17 18:57:26 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/19 14:02:10 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,18 @@ void	Bureaucrat::decreaseGrade(void)
 	_grade++;
 }
 
+// Getters
+
+const std::string	Bureaucrat::getName(void) const
+{
+	return (_name);
+}
+
+int	Bureaucrat::getGrade(void) const
+{
+	return (_grade);
+}
+
 void	Bureaucrat::signForm(Form &form)
 {
 	try 
@@ -89,14 +101,3 @@ void	Bureaucrat::signForm(Form &form)
 	}
 }
 	
-// Getters
-
-const std::string	Bureaucrat::getName(void) const
-{
-	return (_name);
-}
-
-int	Bureaucrat::getGrade(void) const
-{
-	return (_grade);
-}

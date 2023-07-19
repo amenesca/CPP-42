@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 18:02:09 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/17 18:57:16 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/19 14:37:52 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 // Forma canônica / Contrutores e Destrutor
 
 Form::Form(void)\
- : _gradeToExecute(150), _gradeToSign(150), _name("default"), _signed(false)
+ : _name("default"), _gradeToSign(150), _gradeToExecute(150), _signed(false)
 {
     std::cout << "Form default constructor called." << std::endl;
     return ;
@@ -33,7 +33,7 @@ Form::Form(const std::string &name, int gradeToSign, int gradeToExecute)\
 }
 
 Form::Form(const Form &form)\
- : _name(form._name), _gradeToExecute(form._gradeToExecute), _gradeToSign(form._gradeToSign)
+ : _name(form._name), _gradeToSign(form._gradeToSign), _gradeToExecute(form._gradeToExecute)
 {
     std::cout << "Form copy constructor called." << std::endl;
     *this = form;
@@ -56,6 +56,11 @@ Form &Form::operator=(const Form &form)
 	return (*this);
 }
 
+std::ostream &operator<<(std::ostream &o, const Form &rhs) {
+	o << rhs.getName() << ", form sign is " << std::boolalpha << rhs.getSigned() << ", grade to sign is " << rhs.getGradeToSign() << ", grade to execute is " << rhs.getGradeToExecute();
+	return o;
+}
+
 // Getters's grade
 
 const std::string Form::getName(void) const
@@ -75,7 +80,7 @@ int Form::getGradeToSign(void) const
 
 int Form::getGradeToExecute(void) const
 {
-	return (_gradeToExecute);
+	return (this->_gradeToExecute);
 }
 
 void	Form::beSigned(const Bureaucrat &bureaucrat)

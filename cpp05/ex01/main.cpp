@@ -6,16 +6,42 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 18:01:57 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/17 18:49:49 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/19 14:41:40 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
 int main(void) {
-	Bureaucrat	alan("alan", 20);
-	Form		seila("burro", 30, 10);
+	// No erro test
+	Bureaucrat	jotaro("Jotaro", 10);
+	Bureaucrat	dio("Dio", 10);
+	Form		noUse("Useless form", 9, 9);
+	Form		oraOra("Ora Ora form", 10, 10);
 
-	alan.signForm(seila);
-	return (0);
+	std::cout << std::endl;
+	try {
+		Form tooHighForm("High Form", 0,0);
+	} catch (std::exception &e) {
+		std::cerr << e.what() << std::endl;		
+	}
+	std::cout << std::endl;
+	try {
+		Form tooLowForm("Low Form", 151, 151);
+	} catch (std::exception &e) {
+		std::cerr << e.what() << std::endl;
+	}
+	std::cout << std::endl;
+	try {
+		jotaro.signForm(oraOra);
+	} catch (std::exception &e) {
+		std::cerr << e.what() << std::endl;
+	}
+	std::cout << std::endl;
+	try {
+		dio.signForm(noUse);
+	} catch (std::exception &e) {
+		std::cerr << e.what() << std::endl;
+	}
+	std::cout << std::endl;
 }

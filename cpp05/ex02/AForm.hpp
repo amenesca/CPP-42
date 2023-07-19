@@ -6,19 +6,20 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 18:02:04 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/19 15:16:37 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/19 19:41:27 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef AFORM_HPP
+# define AFORM_HPP
 
+# pragma once
 # include "./Bureaucrat.hpp"
 # include <iostream>
 
 class Bureaucrat;
 
-class Form {
+class AForm {
     private:
 	
         const std::string   _name;
@@ -28,12 +29,12 @@ class Form {
     
 	public:
 	
-        Form(void);
-        Form(const std::string &name, int gradeToSign, int gradeToExecute);
-        Form(const Form &form);
-        virtual ~Form(void);
+        AForm(void);
+        AForm(const std::string &name, int gradeToSign, int gradeToExecute);
+        AForm(const AForm &Aform);
+        virtual ~AForm(void);
 		
-        Form	&operator=(const Form &form);
+        AForm	&operator=(const AForm &Aform);
 		
         const std::string getName(void) const;
         bool getSigned(void) const;
@@ -57,6 +58,6 @@ class Form {
 		};
 };
 
-std::ostream    &operator<<(std::ostream &out, const Form &form);
+std::ostream    &operator<<(std::ostream &out, const AForm &Aform);
 
 #endif

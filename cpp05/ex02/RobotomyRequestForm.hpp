@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 15:03:05 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/19 15:11:40 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/19 19:44:04 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 # define ROBOTOMYREQUESTFORM_HPP
 
 # include <iostream>
-# include "./Form.hpp"
+# include "./AForm.hpp"
 
-class RobotomyRequestForm
+class RobotomyRequestForm : public AForm
 {
 
 	public:

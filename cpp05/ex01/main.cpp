@@ -6,11 +6,12 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 18:01:57 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/19 14:41:40 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/19 19:32:25 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include <iostream>
 
 int main(void) {
 	// No erro test
@@ -33,6 +34,7 @@ int main(void) {
 	}
 	std::cout << std::endl;
 	try {
+		std::cout << oraOra << std::endl;
 		jotaro.signForm(oraOra);
 	} catch (std::exception &e) {
 		std::cerr << e.what() << std::endl;

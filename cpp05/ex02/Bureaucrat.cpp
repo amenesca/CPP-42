@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 11:41:01 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/19 14:02:10 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/19 19:42:32 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,16 +88,16 @@ int	Bureaucrat::getGrade(void) const
 	return (_grade);
 }
 
-void	Bureaucrat::signForm(Form &form)
+void	Bureaucrat::signForm(AForm &Aform)
 {
 	try 
 	{
-			form.beSigned(*this);
-			std::cout << this->_name << " signed " << form.getName() << std::endl;
+			Aform.beSigned(*this);
+			std::cout << this->_name << " signed " << Aform.getName() << std::endl;
 	}
 	catch (const std::exception &e) 
 	{
-		std::cout << _name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+		std::cout << _name << " couldn't sign " << Aform.getName() << " because " << e.what() << std::endl;
 	}
 }
 	

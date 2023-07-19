@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 15:03:12 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/19 15:11:55 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/19 19:43:56 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 # define SHRUBBERRYCREATIONFORM_HPP
 
 # include <iostream>
-# include "./Form.hpp"
+# include "./AForm.hpp"
 
-class ShrubberryCreationForm : public Form
+class ShrubberryCreationForm : public AForm
 {
 
 	public:

@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 15:02:57 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/19 15:11:16 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/19 19:44:14 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 # define PRESIDENTIALPARDONFORM_HPP
 
 # include <iostream>
-# include "./Form.hpp"
+# include "./AForm.hpp"
 
-class PresidentialPardonForm
+class PresidentialPardonForm : public AForm
 {
 
 	public:

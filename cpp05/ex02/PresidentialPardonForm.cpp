@@ -6,22 +6,31 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 15:02:52 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/19 20:30:30 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/20 14:32:35 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
+class AForm;
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-PresidentialPardonForm::PresidentialPardonForm(void)
+PresidentialPardonForm::PresidentialPardonForm(void)\
+ : AForm("Presidential Pardon Form", 25, 5)
 {
 	std::cout << "PresidentialPardonForm default constructor called." << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &src)
+PresidentialPardonForm::PresidentialPardonForm(const std::string &target)\
+ : AForm("Presidential Pardon Form", 25, 5), _target(target)
+{
+	std::cout << "PresidentialPardonForm assignment constructor called." << std::endl;
+}
+
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &src)\
+ : AForm("Presidential Pardon Form", 25, 5), _target(src._target)
 {
 	std::cout << "PresidentialPardonForm copy constructor called." << std::endl;
 }
@@ -41,16 +50,18 @@ PresidentialPardonForm::~PresidentialPardonForm(void)
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-
+PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm const &obj)
+{
+	(void)obj;
+    return *this;
+}
 
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
 
-
-/*
-** --------------------------------- ACCESSOR ---------------------------------
-*/
-
-
-/* ************************************************************************** */
+void PresidentialPardonForm::bePardoned(void) const
+{
+	std::cout << "We came to inform that " << _target\
+	 << " has been pardoned by Zaphod Beeblebrox." << std::endl;
+}

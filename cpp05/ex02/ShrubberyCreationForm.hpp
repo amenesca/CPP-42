@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberryCreationForm.hpp                         :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 15:03:12 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/19 20:16:02 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/20 13:23:44 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERRYCREATIONFORM_HPP
-# define SHRUBBERRYCREATIONFORM_HPP
+#ifndef SHRUBBERYCREATIONFORM_HPP
+# define SHRUBBERYCREATIONFORM_HPP
 
 # include <iostream>
+# include <fstream>
 # include "./AForm.hpp"
 
-class ShrubberryCreationForm : public AForm
+class ShrubberyCreationForm : public AForm
 {
 
 	public:
 
-		ShrubberryCreationForm(void);
-		ShrubberryCreationForm(ShrubberryCreationForm const &src);
-		~ShrubberryCreationForm(void);
+		ShrubberyCreationForm(void);
+		ShrubberyCreationForm(const std::string &target);
+		ShrubberyCreationForm(ShrubberyCreationForm const &src);
+		~ShrubberyCreationForm(void);
 
-		ShrubberryCreationForm &operator=(ShrubberryCreationForm const &rhs);
+		ShrubberyCreationForm &operator=(ShrubberyCreationForm const &rhs);
+
+		void createShrubbery(void)const ;
 
 	private:
-		const std::string target;
+		const std::string _target;
 
 };
 
-std::ostream &operator<<(std::ostream &o, ShrubberryCreationForm const &i);
-
-#endif /* ****************************************** SHRUBBERRYCREATIONFORM_H */
+#endif

@@ -6,13 +6,14 @@
 #    By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/11 11:41:25 by amenesca          #+#    #+#              #
-#    Updated: 2023/07/19 14:55:54 by amenesca         ###   ########.fr        #
+#    Updated: 2023/07/20 14:51:58 by amenesca         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = bureaucratnforms
+NAME = AForms
 
-SRC = main.cpp Bureaucrat.cpp AForm.cpp
+SRC = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp \
+RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

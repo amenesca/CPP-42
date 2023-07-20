@@ -6,13 +6,12 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 11:41:01 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/19 19:42:32 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/20 13:31:09 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./Bureaucrat.hpp"
 
-// Forma canônica / Contrutores e Destrutor
 Bureaucrat::Bureaucrat(void)\
  : _name("default"), _grade(150)
 {
@@ -46,7 +45,6 @@ Bureaucrat::~Bureaucrat(void)
 	return ;
 }
 
-// Sobrecarga de operadores
 Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &bureaucrat)
 {
 	std::cout << "Bureaucrat copy operator called." << std::endl;
@@ -61,7 +59,6 @@ std::ostream	&operator<<(std::ostream &os, const Bureaucrat &bureaucrat)
 	return (os);
 }
 
-// Funções Membro
 void	Bureaucrat::increaseGrade(void)
 {
 	if (_grade < 2)
@@ -75,8 +72,6 @@ void	Bureaucrat::decreaseGrade(void)
 		throw GradeTooLowException();
 	_grade++;
 }
-
-// Getters
 
 const std::string	Bureaucrat::getName(void) const
 {

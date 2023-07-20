@@ -6,13 +6,11 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 18:02:09 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/19 19:40:52 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/20 13:31:28 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./AForm.hpp"
-
-// Forma canônica / Contrutores e Destrutor
 
 AForm::AForm(void)\
  : _name("default"), _gradeToSign(150), _gradeToExecute(150), _signed(false)
@@ -46,8 +44,6 @@ AForm::~AForm(void)
     return ;
 }
 
-// Sobrecarga de operadores
-
 AForm &AForm::operator=(const AForm &Aform)
 {
 	std::cout << "AForm copy operator called." << std::endl;
@@ -57,11 +53,10 @@ AForm &AForm::operator=(const AForm &Aform)
 }
 
 std::ostream &operator<<(std::ostream &o, const AForm &rhs) {
-	o << rhs.getName() << ", Aform sign is " << std::boolalpha << rhs.getSigned() << ", grade to sign is " << rhs.getGradeToSign() << ", grade to execute is " << rhs.getGradeToExecute();
+	o << rhs.getName() << ", Aform sign is " << std::boolalpha << rhs.getSigned() << \
+	", grade to sign is " << rhs.getGradeToSign() << ", grade to execute is " << rhs.getGradeToExecute();
 	return o;
 }
-
-// Getters's grade
 
 const std::string AForm::getName(void) const
 {

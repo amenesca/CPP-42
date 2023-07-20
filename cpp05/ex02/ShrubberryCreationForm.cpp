@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 15:03:07 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/19 15:04:04 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/19 20:13:54 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-ShrubberryCreationForm::ShrubberryCreationForm()
+ShrubberryCreationForm::ShrubberryCreationForm(void)
 {
 }
 
-ShrubberryCreationForm::ShrubberryCreationForm( const ShrubberryCreationForm & src )
+ShrubberryCreationForm::ShrubberryCreationForm(const ShrubberryCreationForm &src)
 {
 }
 
@@ -29,7 +29,7 @@ ShrubberryCreationForm::ShrubberryCreationForm( const ShrubberryCreationForm & s
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-ShrubberryCreationForm::~ShrubberryCreationForm()
+ShrubberryCreationForm::~ShrubberryCreationForm(void)
 {
 }
 

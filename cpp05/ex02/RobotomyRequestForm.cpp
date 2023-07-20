@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 15:03:02 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/19 15:03:45 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/19 20:13:04 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-RobotomyRequestForm::RobotomyRequestForm()
+RobotomyRequestForm::RobotomyRequestForm(void)
 {
 }
 
-RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm & src )
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &src)
 {
 }
 
@@ -29,7 +29,7 @@ RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm & src )
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-RobotomyRequestForm::~RobotomyRequestForm()
+RobotomyRequestForm::~RobotomyRequestForm(void)
 {
 }
 

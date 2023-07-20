@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 15:03:12 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/19 19:43:56 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/19 20:16:02 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,17 @@ class ShrubberryCreationForm : public AForm
 
 	public:
 
-		ShrubberryCreationForm();
-		ShrubberryCreationForm( ShrubberryCreationForm const & src );
-		~ShrubberryCreationForm();
+		ShrubberryCreationForm(void);
+		ShrubberryCreationForm(ShrubberryCreationForm const &src);
+		~ShrubberryCreationForm(void);
 
-		ShrubberryCreationForm &		operator=( ShrubberryCreationForm const & rhs );
+		ShrubberryCreationForm &operator=(ShrubberryCreationForm const &rhs);
 
 	private:
 		const std::string target;
 
 };
 
-std::ostream &			operator<<( std::ostream & o, ShrubberryCreationForm const & i );
+std::ostream &operator<<(std::ostream &o, ShrubberryCreationForm const &i);
 
 #endif /* ****************************************** SHRUBBERRYCREATIONFORM_H */

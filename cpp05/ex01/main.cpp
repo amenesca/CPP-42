@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 18:01:57 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/19 19:32:25 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/20 13:31:55 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include <iostream>
 
 int main(void) {
-	// No erro test
 	Bureaucrat	jotaro("Jotaro", 10);
 	Bureaucrat	dio("Dio", 10);
 	Form		noUse("Useless form", 9, 9);
@@ -46,4 +45,6 @@ int main(void) {
 		std::cerr << e.what() << std::endl;
 	}
 	std::cout << std::endl;
+	
+	return (0);
 }

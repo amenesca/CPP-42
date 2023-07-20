@@ -6,13 +6,11 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 18:02:09 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/19 14:37:52 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/20 13:32:22 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./Form.hpp"
-
-// Forma canônica / Contrutores e Destrutor
 
 Form::Form(void)\
  : _name("default"), _gradeToSign(150), _gradeToExecute(150), _signed(false)
@@ -46,8 +44,6 @@ Form::~Form(void)
     return ;
 }
 
-// Sobrecarga de operadores
-
 Form &Form::operator=(const Form &form)
 {
 	std::cout << "Form copy operator called." << std::endl;
@@ -60,8 +56,6 @@ std::ostream &operator<<(std::ostream &o, const Form &rhs) {
 	o << rhs.getName() << ", form sign is " << std::boolalpha << rhs.getSigned() << ", grade to sign is " << rhs.getGradeToSign() << ", grade to execute is " << rhs.getGradeToExecute();
 	return o;
 }
-
-// Getters's grade
 
 const std::string Form::getName(void) const
 {

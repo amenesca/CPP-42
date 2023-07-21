@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 18:01:57 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/21 14:46:55 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/21 13:47:37 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ int main(void) {
 	RobotomyRequestForm gpt("Alan");
 	Bureaucrat alan("Alan", 1);
 	
-	std::cout << gpt << std::endl;
-
 	std::cout << std::endl;
 	alan.signForm(plant_tree);
 	alan.signForm(pardon);

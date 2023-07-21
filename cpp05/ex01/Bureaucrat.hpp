@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 11:41:11 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/19 19:58:52 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/21 13:14:04 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,18 +43,12 @@ class Bureaucrat {
 	class GradeTooHighException : public std::exception
 	{
 		public:
-			virtual const char* what() const throw()
-			{
-				return ("Bureaucrat::exception : Grade is too high!");
-			}
+			virtual const char* what() const throw();
 	};
 	class GradeTooLowException : public std::exception
 	{
 		public:
-			virtual const char* what() const throw()
-			{
-				return ("Bureaucrat::exception : Grade is too low!");
-			}
+			virtual const char* what() const throw();
 	};
 };
 

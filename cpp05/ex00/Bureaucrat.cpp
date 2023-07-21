@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 11:41:01 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/15 11:07:26 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/21 13:15:00 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,12 @@ const std::string	Bureaucrat::getName(void) const
 int	Bureaucrat::getGrade(void) const
 {
 	return (_grade);
+}
+
+const char *Bureaucrat::GradeTooHighException::what() const throw() {
+	return "Error: Grade is too high";
+}
+
+const char *Bureaucrat::GradeTooLowException::what() const throw() {
+	return "Error: Grade is too low";
 }

@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 18:02:04 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/20 21:59:15 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/21 13:04:51 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,26 +47,22 @@ class AForm {
 		
 		class GradeTooHighException : public std::exception {
 			public:
-				virtual const char *what() const throw() {
-					return ("grade is too high!");
-				}
+				virtual const char *what() const throw();
 		};
 		class GradeTooLowException : public std::exception {
 			public:
-				virtual const char *what() const throw() {
-					return ("grade is too low!");
-				}
+				virtual const char *what() const throw();
 		};
 		class ExecuteNotSigned : public std::exception
 		{
 			public:
-				virtual const char *what() const throw() { return ("form is not signed"); }
+				virtual const char *what() const throw();
 		};
 		
 		class FileOpeningFail : public std::exception
 		{
 			public:
-				virtual const char *what() const throw() { return ("file cannot be opened"); }
+				virtual const char *what() const throw();
 		};
 };
 

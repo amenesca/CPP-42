@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 15:02:52 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/20 22:17:20 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/21 13:43:16 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,19 @@ class AForm;
 PresidentialPardonForm::PresidentialPardonForm(void)\
  : AForm("Presidential Pardon Form", 25, 5)
 {
-	std::cout << "PresidentialPardonForm default constructor called." << std::endl;
+	return ;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string &target)\
  : AForm("Presidential Pardon Form", 25, 5), _target(target)
 {
-	std::cout << "PresidentialPardonForm assignment constructor called." << std::endl;
+	return ;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &src)\
  : AForm("Presidential Pardon Form", 25, 5), _target(src._target)
 {
-	std::cout << "PresidentialPardonForm copy constructor called." << std::endl;
+	return ;
 }
 
 
@@ -43,7 +43,7 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &src
 
 PresidentialPardonForm::~PresidentialPardonForm(void)
 {
-	std::cout << "PresidentialPardonForm destructor called." << std::endl;
+	return ;
 }
 
 

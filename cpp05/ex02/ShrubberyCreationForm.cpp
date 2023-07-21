@@ -19,19 +19,19 @@
 ShrubberyCreationForm::ShrubberyCreationForm(void)\
  : AForm("Shrubbery", 145, 137)
 {
-	std::cout << "ShruberryCreationForm default constructor called." << std::endl;
+	return ;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)\
  :AForm("Shrubbery", 145, 137), _target(target)
 {
-	std::cout << "ShruberryCreationForm assignment constructor called." << std::endl;
+	return ;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &src)\
  : AForm("Shrubbery", 145, 137), _target(src._target)
 {
-	std::cout << "ShruberryCreationForm copy constructor called." << std::endl;
+	return ;
 }
 
 
@@ -41,7 +41,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &src)\
 
 ShrubberyCreationForm::~ShrubberyCreationForm(void)
 {
-	std::cout << "ShruberryCreationForm destructor called." << std::endl;
+	return ;
 }
 
 
@@ -78,11 +78,11 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
         file << "         |||/\\ \\ \n";
         file << "         |||\\ \\ \n";
         file << "         ||||\\ \\ \n";
-        file << "   .....//||||\\ \\\\. . .\n";
+        file << "   .....//||||\\ \\\\. . .";
 	
 		file.close();
 		std::cout << "File " << _target << "_shrubbery has been created" << std::endl;
 	} else {
-		std::cerr << "Error to create " << _target << "_shrubbery." << std::endl;
+		throw FileOpeningFail();
 	}
 }

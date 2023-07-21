@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 15:03:02 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/20 22:19:06 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/21 13:43:04 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,19 @@
 RobotomyRequestForm::RobotomyRequestForm(void)\
  : AForm("Robotomy Request Form", 72, 45)
 {
-	std::cout << "RobotomyRequestForm default constructor called." << std::endl;
+ return ;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string &target)\
  : AForm("Robotomy Request Form", 72, 45), _target(target)
 {
-	std::cout << "RobotomyRequestForm assignment constructor called." << std::endl;
+	return ;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &src)\
  : AForm("Robotomy Request Form", 72, 45), _target(src._target)
 {
-	std::cout << "RobotomyRequestForm copy constructor called." << std::endl;
+	return ;
 }
 
 
@@ -41,7 +41,7 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &src)\
 
 RobotomyRequestForm::~RobotomyRequestForm(void)
 {
-	std::cout << "RobotomyRequestForm destructor called." << std::endl;
+	return ;
 }
 
 

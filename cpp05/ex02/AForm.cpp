@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 18:02:09 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/20 22:01:17 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/21 13:27:30 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,12 @@
 AForm::AForm(void)\
  : _name("default"), _gradeToSign(150), _gradeToExecute(150), _signed(false)
 {
-    std::cout << "AForm default constructor called." << std::endl;
     return ;
 }
 
 AForm::AForm(const std::string &name, int gradeToSign, int gradeToExecute)\
  : _name(name), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute), _signed(false)
 {
-    std::cout << "AForm:" << _name << " assignment constructor called." << std::endl;
 	if (gradeToSign < 1 || gradeToExecute < 1)
 		throw AForm::GradeTooHighException();
 	if (gradeToExecute > 150 || gradeToSign > 150)
@@ -33,20 +31,17 @@ AForm::AForm(const std::string &name, int gradeToSign, int gradeToExecute)\
 AForm::AForm(const AForm &Aform)\
  : _name(Aform._name), _gradeToSign(Aform._gradeToSign), _gradeToExecute(Aform._gradeToExecute)
 {
-    std::cout << "AForm copy constructor called." << std::endl;
     *this = Aform;
     return ;
 }
 
 AForm::~AForm(void)
 {
-    std::cout << "AForm destructor called." << std::endl;
     return ;
 }
 
 AForm &AForm::operator=(const AForm &Aform)
 {
-	std::cout << "AForm copy operator called." << std::endl;
 	if (this != &Aform)
 		_signed = Aform._signed;
 	return (*this);
@@ -92,4 +87,20 @@ void	AForm::executeCheck(const Bureaucrat &bureaucrat) const
 		throw AForm::ExecuteNotSigned();
 	if (this->getGradeToExecute() < bureaucrat.getGrade())
 		throw AForm::GradeTooLowException();
+}
+
+const char *AForm::GradeTooHighException::what() const throw() {
+	return "Error: Grade is too high";
+}
+
+const char *AForm::GradeTooLowException::what() const throw() {
+	return "Error: Grade is too low";
+}
+
+const char *AForm::ExecuteNotSigned::what() const throw() {
+	return "Error: Form is not signed";
+}
+
+const char *AForm::FileOpeningFail::what() const throw() {
+	return "Error: Cannot open file";
 }

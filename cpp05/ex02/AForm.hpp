@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 18:02:04 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/19 19:41:27 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/20 21:59:15 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ class AForm {
         
 		void beSigned(const Bureaucrat &bureaucrat);
 		virtual void execute(Bureaucrat const & executor) const = 0;
+		void	executeCheck(const Bureaucrat &bureaucrat) const;
 		
 		class GradeTooHighException : public std::exception {
 			public:
@@ -55,6 +56,17 @@ class AForm {
 				virtual const char *what() const throw() {
 					return ("grade is too low!");
 				}
+		};
+		class ExecuteNotSigned : public std::exception
+		{
+			public:
+				virtual const char *what() const throw() { return ("form is not signed"); }
+		};
+		
+		class FileOpeningFail : public std::exception
+		{
+			public:
+				virtual const char *what() const throw() { return ("file cannot be opened"); }
 		};
 };
 

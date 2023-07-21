@@ -59,8 +59,10 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void ShrubberyCreationForm::createShrubbery(void) const
+void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
+	this->AForm::executeCheck(executor);
+
 	std::string file_name = _target + "_shrubbery";
 	const char *cString = file_name.c_str();
 	std::ofstream file(cString);

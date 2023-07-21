@@ -6,11 +6,12 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 15:02:52 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/20 14:32:35 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/20 22:17:20 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
+#include "AForm.hpp"
 
 class AForm;
 /*
@@ -60,8 +61,9 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void PresidentialPardonForm::bePardoned(void) const
+void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
+	this->AForm::executeCheck(executor);
 	std::cout << "We came to inform that " << _target\
 	 << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 }

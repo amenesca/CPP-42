@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 11:41:01 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/20 13:31:09 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/20 22:12:00 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,3 +96,16 @@ void	Bureaucrat::signForm(AForm &Aform)
 	}
 }
 	
+void	Bureaucrat::executeForm(const AForm &form) const
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << _name << " executed " << form.getName() << std::endl;
+	}
+	catch(const std::exception &e)
+	{
+		std::cout << _name << " cannot execute " << form.getName()\
+		 <<  " because " << e.what() << std::endl;
+	}
+}

@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 15:03:02 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/20 14:35:12 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/20 22:19:06 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,9 @@ Se o valor gerado for menor do que a probabilidade de sucesso \
  Caso contrário, a condição será falsa e você imprimirá "Fracasso!".
 */
 
-void	RobotomyRequestForm::Robotomy(void) const
+void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
+	this->AForm::executeCheck(executor);
 	std::srand(std::time(0));
 	double chance = (double)((std::rand()) / (RAND_MAX + (double)1));
 	double probability = 0.5;

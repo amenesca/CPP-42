@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 15:03:05 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/20 14:44:17 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/20 15:12:32 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class RobotomyRequestForm : public AForm
 
 		RobotomyRequestForm &operator=(RobotomyRequestForm const &rhs);
 
-		void Robotomy(void) const;
+		void execute(Bureaucrat const & executor) const;
 	private:
 		const std::string _target;
 

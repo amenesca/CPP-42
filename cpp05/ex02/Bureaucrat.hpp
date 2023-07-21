@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 11:41:11 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/19 19:42:02 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/20 22:02:09 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,10 @@ class Bureaucrat {
 
 		void	increaseGrade(void);
 		void	decreaseGrade(void);
-		void	signForm(AForm &Aform);
 		const std::string	getName(void) const;
-		int					getGrade(void) const;
+		int		getGrade(void) const;
+		void	signForm(AForm &Aform);
+		void	executeForm(const AForm &form) const;
 
 
 	class GradeTooHighException : public std::exception

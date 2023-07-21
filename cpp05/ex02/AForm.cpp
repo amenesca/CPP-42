@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 18:02:09 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/20 13:31:28 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/20 22:01:17 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,13 @@ void	AForm::beSigned(const Bureaucrat &bureaucrat)
 	if (bureaucrat.getGrade() <= this->_gradeToSign)
 		this->_signed = true;
 	else
+		throw AForm::GradeTooLowException();
+}
+
+void	AForm::executeCheck(const Bureaucrat &bureaucrat) const
+{
+	if (!this->getSigned())
+		throw AForm::ExecuteNotSigned();
+	if (this->getGradeToExecute() < bureaucrat.getGrade())
 		throw AForm::GradeTooLowException();
 }

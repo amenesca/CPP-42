@@ -13,6 +13,7 @@
 #include "./Bureaucrat.hpp"
 
 // Forma canônica / Contrutores e Destrutor
+
 Bureaucrat::Bureaucrat(void)\
  : _name("default"), _grade(150)
 {

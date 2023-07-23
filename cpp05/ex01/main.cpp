@@ -20,27 +20,34 @@ int main(void) {
 	Form		oraOra("Ora Ora form", 10, 10);
 
 	std::cout << std::endl;
+	std::cout << "Error test: too high form.\n";
 	try {
 		Form tooHighForm("High Form", 0,0);
 	} catch (std::exception &e) {
 		std::cerr << e.what() << std::endl;		
 	}
 	std::cout << std::endl;
+	std::cout << "Error test: too low form.\n";
 	try {
 		Form tooLowForm("Low Form", 151, 151);
 	} catch (std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}
 	std::cout << std::endl;
+	std::cout << "Error test: no error test.\n";
 	try {
 		std::cout << oraOra << std::endl;
 		jotaro.signForm(oraOra);
+		std::cout << oraOra << std::endl;
 	} catch (std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}
 	std::cout << std::endl;
+	std::cout << "Error test: Insuficient grade to sign.\n";
 	try {
+		std::cout << noUse << std::endl;
 		dio.signForm(noUse);
+		std::cout << noUse << std::endl;
 	} catch (std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}

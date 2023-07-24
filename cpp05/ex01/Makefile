@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = bureaucratnforms
+NAME = bureaucratsnforms
 
 SRC = main.cpp Bureaucrat.cpp Form.cpp
 

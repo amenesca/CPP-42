@@ -51,8 +51,8 @@ static AForm	*newPresidential(const std::string target)
 
 AForm *Intern::makeForm(const std::string formName, const std::string target) const
 {
-	constructorPtr *constructorPtr[3] = {&newShrubbery, &newPresidential, &newRobotomy};
-	std::string		formNames[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
+	ConstructorPtr constructorPtr[3] = {&newShrubbery, &newPresidential, &newRobotomy};
+	std::string		formNames[3] = {"shrubbery creation", "presidential pardon", "robotomy request"};
 	AForm *formPtr = NULL;
 	int i = 0;
 
@@ -62,11 +62,14 @@ AForm *Intern::makeForm(const std::string formName, const std::string target) co
 		{
 			formPtr = constructorPtr[i](target);
 			std::cout << "Intern created " << formPtr->getName() << " form." << std::endl;
+			return (formPtr);
 			break ;
 		}
 		i++;
 	}
-	if (i == 3)
-		std::cout << "Intern couldn't create " << formName << "form." << std::endl;
-	return (formPtr); 	
+	throw MakeFormErrorException();
+}
+
+const char *Intern::MakeFormErrorException::what() const throw() { 
+	return "Error: Intern couldn' create form.";
 }

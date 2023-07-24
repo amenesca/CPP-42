@@ -18,29 +18,36 @@
 int main(void) {
 	//test no error
 	try {
-	ShrubberyCreationForm plant_tree("Alan");
-	PresidentialPardonForm pardon("Alan");
-	RobotomyRequestForm gpt("Alan");
-	Bureaucrat alan("Alan", 1);
-	
-	std::cout << gpt << std::endl;
+		std::cout << "\nError test: No error test.\n\n";
+		ShrubberyCreationForm plant_tree("Alan");
+		PresidentialPardonForm pardon("Alan");
+		RobotomyRequestForm gpt("Alan");
+		Bureaucrat alan("Alan", 1);
+		
+		std::cout << plant_tree << std::endl;
+		std::cout << pardon << std::endl;
+		std::cout << gpt << std::endl;
 
-	std::cout << std::endl;
-	alan.signForm(plant_tree);
-	alan.signForm(pardon);
-	alan.signForm(gpt);
-	std::cout << std::endl;
-	alan.executeForm(plant_tree);
-	std::cout << std::endl;
-	alan.executeForm(pardon);
-	std::cout << std::endl;
-	alan.executeForm(gpt);
-	std::cout << std::endl;
-	std::cout << std::endl;
+
+		std::cout << std::endl;
+		alan.signForm(plant_tree);
+		alan.signForm(pardon);
+		alan.signForm(gpt);
+		std::cout << std::endl << plant_tree << std::endl;
+		std::cout << pardon << std::endl;
+		std::cout << gpt << std::endl;
+		std::cout << std::endl;
+		alan.executeForm(plant_tree);
+		std::cout << std::endl;
+		alan.executeForm(pardon);
+		std::cout << std::endl;
+		alan.executeForm(gpt);
+		std::cout << std::endl;
 	} catch (std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}
 	//test execute not signed
+	std::cout << "Error tests: tries to execute not signed forms.\n\n";
 	try {
 		PresidentialPardonForm forgives("Fernando");
 		Bureaucrat fabricio("Fabricio", 26);

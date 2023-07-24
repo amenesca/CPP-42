@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = bureaucrat
+NAME = bureaucrats
 
 SRC = main.cpp Bureaucrat.cpp
 

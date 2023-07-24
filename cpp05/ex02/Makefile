@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = AForms
+NAME = aforms
 
 SRC = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp \
 RobotomyRequestForm.cpp ShrubberyCreationForm.cpp

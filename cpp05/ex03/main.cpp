@@ -11,62 +11,42 @@
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "./ShrubberyCreationForm.hpp"
 #include "./RobotomyRequestForm.hpp"
+#include "Intern.hpp"
+#include <exception>
+#include <iostream>
 
 int main(void) {
-	//test no error
 	try {
-	ShrubberyCreationForm plant_tree("Alan");
-	PresidentialPardonForm pardon("Alan");
-	RobotomyRequestForm gpt("Alan");
-	Bureaucrat alan("Alan", 1);
-	
-	std::cout << std::endl;
-	alan.signForm(plant_tree);
-	alan.signForm(pardon);
-	alan.signForm(gpt);
-	std::cout << std::endl;
-	alan.executeForm(plant_tree);
-	std::cout << std::endl;
-	alan.executeForm(pardon);
-	std::cout << std::endl;
-	alan.executeForm(gpt);
-	std::cout << std::endl;
-	std::cout << std::endl;
+		Intern estagiario;
+		AForm *shrubbery = estagiario.makeForm("shrubbery creation", "Deorum");
+		AForm *robotomy = estagiario.makeForm("robotomy request", "Deorum");
+		AForm *pardon = estagiario.makeForm("presidential pardon", "Deorum");
+		std::cout << std::endl;
+		Bureaucrat Alan("Alan", 1);
+		Alan.signForm(*shrubbery);
+		Alan.executeForm(*shrubbery);
+		std::cout << std::endl;
+		Alan.signForm(*robotomy);
+		Alan.executeForm(*robotomy);
+		std::cout << std::endl;
+		Alan.signForm(*pardon);
+		Alan.executeForm(*pardon);
+		std::cout << std::endl;
+		delete shrubbery;
+		delete robotomy;
+		delete pardon;
 	} catch (std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}
-	//test execute not signed
-	try {
-		PresidentialPardonForm forgives("Fernando");
-		Bureaucrat fabricio("Fabricio", 26);
-
-		fabricio.signForm(forgives);
-		fabricio.executeForm(forgives);
+		try {
+		Intern estagiario;
+		AForm *shrubbery = estagiario.makeForm("form form", "Deorum");
+		(void)shrubbery;
 	} catch (std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}
-	std::cout << std::endl;
-	try {
-		ShrubberyCreationForm tree("Fernando");
-		Bureaucrat fabricio("Fabricio", 150);
-
-		fabricio.signForm(tree);
-		fabricio.executeForm(tree);
-	} catch (std::exception &e) {
-		std::cerr << e.what() << std::endl;
-	}
-	std::cout << std::endl;
-	try {
-		RobotomyRequestForm robotomy("Fernando");
-		Bureaucrat fabricio("Fabricio", 100);
-
-		fabricio.signForm(robotomy);
-		fabricio.executeForm(robotomy);
-	} catch (std::exception &e) {
-		std::cerr << e.what() << std::endl;
-	}
-	std::cout << std::endl;
 }

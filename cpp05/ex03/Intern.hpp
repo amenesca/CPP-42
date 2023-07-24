@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include "AForm.hpp"
+#include "Bureaucrat.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
@@ -28,12 +29,17 @@ class Intern {
 		Intern	&operator=(const Intern &intern);
 		AForm *makeForm(const std::string formName, const std::string target) const;
 
+		class MakeFormErrorException : public std::exception {
+			public:
+				virtual const char *what() const throw();
+		};
+
 };
 
 /*Essa declaração usando using cria um alias de tipo chamado constructorPtr,\
  que representa um ponteiro para função que retorna um ponteiro para AForm\
  e recebe um parâmetro do tipo const std::string.*/
 
-using constructorPtr = AForm *(const std::string);
+typedef AForm* (*ConstructorPtr)(const std::string);
 
 #endif

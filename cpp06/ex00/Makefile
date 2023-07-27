@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/07/11 11:41:25 by amenesca          #+#    #+#              #
-#    Updated: 2023/07/26 14:53:13 by amenesca         ###   ########.fr        #
+#    Created: 2023/07/26 11:41:25 by amenesca          #+#    #+#              #
+#    Updated: 2023/07/26 14:54:09 by amenesca         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = bureaucratsnforms
+NAME = convert
 
-SRC = main.cpp Bureaucrat.cpp Form.cpp
+SRC = main.cpp ScalarConverter.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

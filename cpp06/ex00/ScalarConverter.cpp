@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 15:50:28 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/28 14:57:18 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/28 15:19:06 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>
-#include <math.h>
+#include <limits>
 
 ScalarConverter::ScalarConverter(void)
 {
@@ -124,6 +124,47 @@ static void convertChar(const std::string& input)
 	return;
 }
 
+static void convertInf(const std::string& input)
+{
+	char c;
+	int i;
+	float f;
+	double d;
+	
+	if (input == "inf" || input == "+inf")
+	{
+		d = std::numeric_limits<double>::infinity();
+		f = static_cast<float>(d);
+		c = static_cast<char>(d);
+		i = static_cast<int>(d);
+	}
+	else if(input == "-inf")
+	{
+		d = -std::numeric_limits<double>::infinity();
+		f = static_cast<float>(d);
+		c = static_cast<char>(d);
+		i = static_cast<int>(d);
+	}
+	else if (input == "inff" || input == "+inff")
+	{		
+		f = std::numeric_limits<double>::infinity();
+		d = static_cast<double>(f);
+		c = static_cast<char>(f);
+		i = static_cast<int>(f);
+	}
+	else if (input == "-inff")
+	{
+		f = -std::numeric_limits<double>::infinity();
+		d = static_cast<double>(f);
+		c = static_cast<char>(f);
+		i = static_cast<int>(f);
+	}
+	outChar(c);
+	std::cout << "int: " << i << std::endl;
+	std::cout << "float: " << f << "f" << std::endl;
+	std::cout << "double: " << d << std::endl;
+}
+
 static void convertFloat(const std::string& input)
 {
 	char c;
@@ -226,6 +267,12 @@ void    ScalarConverter::convert(const std::string& input)
 	if (input.size() == 1 && !(input >= "0" && input <= "9"))
 	{
 		convertChar(input);
+		return;
+	}
+	else if(input == "inf" || input == "+inf" || input == "-inf"\
+	 || input == "inff" || input == "+inff" || input == "-inff")
+	{
+		convertInf(input);
 		return;
 	}
 	else if (input[input.size() - 1] == 'f')

@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 15:50:28 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/28 15:19:06 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/28 15:30:20 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -194,8 +194,6 @@ static void convertFloat(const std::string& input)
 	std::cout << "int: " << i << std::endl;
 	if (precision == 0)
 		precision = 1;
-	if (precision > 7)
-		precision = 7;
 	std::cout << std::fixed << std::setprecision(precision) << "float: " << f << "f" << std::endl;
 	std::cout << std::fixed << std::setprecision(precision) << "double: " << d << std::endl;
 	return;
@@ -228,8 +226,6 @@ static void convertDouble(const std::string& input)
 	std::cout << "int: " << i << std::endl;
 	if (precision == 0)
 		precision = 1;
-	if (precision > 16)
-		precision = 16;
 	std::cout << std::fixed << std::setprecision(precision) << "float: " << f << "f" << std::endl;
 	std::cout << std::fixed << std::setprecision(precision) << "double: " << d << std::endl;
 }

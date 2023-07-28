@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 15:50:32 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/27 18:29:47 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/28 14:44:16 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int main()
 {
-    ScalarConverter::convert("42.f");
+    ScalarConverter::convert("nan");
     return (0);
 }

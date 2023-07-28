@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 15:50:34 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/26 18:10:51 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/07/28 12:14:06 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class ScalarConverter {
     public:
     	~ScalarConverter(void);
         
-    	static void convert(std::string input);
+    	static void convert(const std::string& input);
 };
 
 

@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/26 15:50:34 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/29 19:59:31 by amenesca         ###   ########.fr       */
+/*   Created: 2023/07/29 19:22:47 by amenesca          #+#    #+#             */
+/*   Updated: 2023/07/29 19:25:43 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
+#ifndef DATA_HPP
+# define DATA_HPP
 
-#ifndef SCALARCONVERTER_HPP
-# define SCALARCONVERTER_HPP
-
-class ScalarConverter {
-	private:
-    	ScalarConverter(void);
-    	ScalarConverter(const ScalarConverter& copy);
-    	ScalarConverter& operator=(const ScalarConverter& copy);
-    public:
-    	~ScalarConverter(void);
-        
-    	static void convert(const std::string& input);
+struct Data {
+	int		nbr;
+	char	c;
+	double	nbr2;
 };
-
-
 
 #endif

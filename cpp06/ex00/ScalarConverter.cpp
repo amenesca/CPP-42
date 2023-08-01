@@ -6,18 +6,11 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 15:50:28 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/30 20:22:55 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/08/01 14:42:25 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./ScalarConverter.hpp"
-#include <climits>
-#include <iostream>
-#include <iomanip>
-#include <cstdlib>
-#include <limits>
-#include <ostream>
-#include <string>
 
 ScalarConverter::ScalarConverter(void)
 {
@@ -54,7 +47,7 @@ static int countPrecision(const std::string& tocheck)
 			dotflag = 1;
 			continue;
         }
-		if (dotflag == 1)
+		if (dotflag == 1 && tocheck[i] != 'f')
 			precision++;
 	}
 	return precision;

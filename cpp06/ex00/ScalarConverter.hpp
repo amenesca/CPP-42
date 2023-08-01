@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 15:50:34 by amenesca          #+#    #+#             */
-/*   Updated: 2023/07/29 19:59:31 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/08/01 14:42:33 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 #ifndef SCALARCONVERTER_HPP
 # define SCALARCONVERTER_HPP
+
+#include <climits>
+#include <iostream>
+#include <iomanip>
+#include <cstdlib>
 
 class ScalarConverter {
 	private:

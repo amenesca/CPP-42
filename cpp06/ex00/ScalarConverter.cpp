@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 15:50:28 by amenesca          #+#    #+#             */
-/*   Updated: 2023/08/01 14:42:25 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/08/02 11:08:26 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,14 @@ void convertDouble(const double& d,const std::string input)
 		c = static_cast<char>(d);
 		std::cout << "char: '" << c << "'" << std::endl;
 	}
+	else if (input == "+nan" || input == "-nan" || input == "nan")
+		std::cout << "int: Impossible" << std::endl;
 	else {
 		std::cout << "char: Non displayable" << std::endl;
 	}
 	if (d < INT_MIN || d > INT_MAX)
+		std::cout << "int: Impossible" << std::endl;
+	else if (input == "+nan" || input == "-nan" || input == "nan")
 		std::cout << "int: Impossible" << std::endl;
 	else {
 		i = static_cast<int>(d);
@@ -121,11 +125,15 @@ void convertFloat(const float& f, const std::string& input)
 		c = static_cast<char>(f);
 		std::cout << "char: '" << c << "'" << std::endl;
 	}
+	else if (input == "+nanf" || input == "-nanf" || input == "nanf")
+		std::cout << "char: Impossible" << std::endl;
 	else {
 		std::cout << "char: Non displayable" << std::endl;
 	}
 	d = static_cast<double>(f);
 	if (d < INT_MIN || d > INT_MAX)
+		std::cout << "int: Impossible" << std::endl;
+	else if (input == "+nanf" || input == "-nanf" || input == "nanf")
 		std::cout << "int: Impossible" << std::endl;
 	else {
 		i = static_cast<int>(f);

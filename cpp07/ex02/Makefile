@@ -6,13 +6,13 @@
 #    By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/06 18:54:51 by amenesca          #+#    #+#              #
-#    Updated: 2023/08/07 12:06:42 by amenesca         ###   ########.fr        #
+#    Updated: 2023/08/07 15:15:41 by amenesca         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = arraytemplate
 
-SRC = main.cpp Array.tpp
+SRC = main.cpp
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 

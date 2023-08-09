@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 12:06:47 by amenesca          #+#    #+#             */
-/*   Updated: 2023/08/08 14:39:07 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/08/09 16:40:44 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 # define ARRAY_HPP
 
 #include <ostream>
-#include <exception>
 
 template <typename T>
 class Array {
 	private:
 		T	*_array;
 		unsigned int _size;
+		int _instance;
 	public:
 		Array(void);
 		Array(unsigned int n);

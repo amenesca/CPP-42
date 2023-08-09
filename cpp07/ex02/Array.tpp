@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 11:30:06 by amenesca          #+#    #+#             */
-/*   Updated: 2023/08/08 14:41:16 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/08/09 16:40:38 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,29 +18,35 @@
 template <typename T>
 Array<T>::Array(void) : _size(0) {
 	_array = new T[0];
+	_instance = 1;
 }
 
 template <typename T>
 Array<T>::Array(unsigned int n) : _size(n) {
 	_array = new T[n];
+	_instance = 1;
 }
 
 template <typename T>
 Array<T>::~Array(void) {
-	delete[] _array;
+	if (this->_array != NULL)
+		delete [] this->_array;
 }
 
 template <typename T>
 Array<T>::Array(const Array& copy) {
-	*this = copy; 
+	_instance = 0;
+	*this = copy;
+	_instance = 1;
 }
 
 template <typename T>
 Array<T>&	Array<T>::operator=(const Array& copy) {
-	if (this == &copy)
+	if (this == &copy) {
 		return *this;
-	if (this->_array != 0)
-		delete[] _array;
+	}
+	if (this->_instance == 1)
+		delete[] this->_array;
 	this->_array = new T[copy.size()];
 	for (unsigned int i = 0; i < copy.size(); i++) {
 		this->_array[i] = copy._array[i];

@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 12:06:47 by amenesca          #+#    #+#             */
-/*   Updated: 2023/08/09 16:40:44 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/08/10 12:43:40 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ class Array {
 		unsigned int size(void) const;
 
 		T& operator[](const unsigned int index);
-		
 };
+
+#include "Array.tpp"
 
 #endif

@@ -6,12 +6,11 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 15:16:05 by amenesca          #+#    #+#             */
-/*   Updated: 2023/08/08 14:45:55 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/08/10 12:43:48 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
-#include "Array.tpp"
 #include <iostream>
 
 int main(void) {

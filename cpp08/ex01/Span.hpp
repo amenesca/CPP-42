@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 18:33:51 by amenesca          #+#    #+#             */
-/*   Updated: 2023/08/13 21:28:31 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/08/14 14:41:09 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define SPAN_HPP
 
 #include <vector>
+#include <algorithm>
+#include <limits>
+#include <cmath>
 
 class Span {
 	private:

@@ -6,13 +6,11 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 18:34:15 by amenesca          #+#    #+#             */
-/*   Updated: 2023/08/14 13:59:17 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/08/14 15:02:43 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
-#include <algorithm>
-#include <limits>
 
 Span::Span(void) : _N(0) {}
 
@@ -48,12 +46,10 @@ void Span::addNumber(int nbr) {
 int Span::longestSpan(void) {
 	if (_N <= 1)
 		throw NoSpanCanBeFound();
-	int min = *std::min_element(_elements.begin(), _elements.end());
-	int max = *std::max_element(_elements.begin(), _elements.end());
-	return (max - min);
+	std::vector<int>::iterator min_element = std::min_element(_elements.begin(), _elements.end());
+	std::vector<int>::iterator max_element = std::max_element(_elements.begin(), _elements.end());
+	return (*max_element - *min_element);
 }
-
-#include <iostream>
 
 int Span::shortestSpan(void) {
 	if (_N <= 1)
@@ -62,9 +58,10 @@ int Span::shortestSpan(void) {
 	std::sort(compare.begin(), compare.end());
 
 	int minSpan = std::numeric_limits<int>::max();
-	for (size_t i = 1; i < compare.size(); ++i)
+	for (std::vector<int>::iterator it = compare.begin()++;
+	 it != compare.end(); ++it)
 	{
-		int span = std::abs(compare[i] - compare[i - 1]);
+		int span = std::abs(*it - *(it - 1));
 		if (span < minSpan)
 			minSpan = span;
 	}

@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 13:23:06 by amenesca          #+#    #+#             */
-/*   Updated: 2023/08/14 16:44:56 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/08/14 17:10:35 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class MutantStack : public std::stack<T, std::deque<T> > {
 		
 		MutantStack(const MutantStack& copy) {
 			*this = copy;
-		
 		}
 		virtual ~MutantStack() {}
 		

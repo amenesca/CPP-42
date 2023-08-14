@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 18:34:15 by amenesca          #+#    #+#             */
-/*   Updated: 2023/08/13 22:28:01 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/08/14 13:59:17 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,9 @@
 #include <algorithm>
 #include <limits>
 
-Span::Span(void) {
-	_elements = std::vector<int> (0);
-}
+Span::Span(void) : _N(0) {}
 
-Span::Span(unsigned int N) : _N(N) {
-	_elements = std::vector<int> (_N);
-}
+Span::Span(unsigned int N) : _N(N) {}
 
 Span::~Span(void) {}
 
@@ -39,12 +35,12 @@ Span& Span::operator=(const Span& copy) {
 }
 
 void Span::addNumber(int nbr) {
-	static unsigned int i = 0;
+	static unsigned int i;
 	if (i >= _N)
 		throw LimitExceededException();
 	else
 	{
-		_elements[i] = nbr;
+		_elements.push_back(nbr);
 		i++;
 	}
 }
@@ -57,17 +53,18 @@ int Span::longestSpan(void) {
 	return (max - min);
 }
 
+#include <iostream>
+
 int Span::shortestSpan(void) {
 	if (_N <= 1)
 		throw NoSpanCanBeFound();
-	std::vector<int> compare(_elements);
+	std::vector<int> compare = _elements;
 	std::sort(compare.begin(), compare.end());
-	
+
 	int minSpan = std::numeric_limits<int>::max();
-	int span;
-	for (size_t i = 1; i < compare.size(); i++)
+	for (size_t i = 1; i < compare.size(); ++i)
 	{
-		span = compare[i] - compare[i - 1];
+		int span = std::abs(compare[i] - compare[i - 1]);
 		if (span < minSpan)
 			minSpan = span;
 	}

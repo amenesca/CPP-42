@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 18:34:09 by amenesca          #+#    #+#             */
-/*   Updated: 2023/08/13 22:28:31 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/08/14 14:01:43 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ int main()
 	int_vector.addNumber(28);
 	int_vector.addNumber(31);
 	int_vector.addNumber(20);
-	int_vector.addNumber(7);
+	int_vector.addNumber(15);
 	int_vector.addNumber(12);
 	int_vector.addNumber(40);
-	int_vector.addNumber(30);
+	int_vector.addNumber(35);
 	
 	try {
 		int_vector.addNumber(5);

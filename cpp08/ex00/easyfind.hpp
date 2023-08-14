@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 12:45:32 by amenesca          #+#    #+#             */
-/*   Updated: 2023/08/13 18:32:26 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/08/13 20:09:08 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define EASYFIND_HPP
 
 #include <algorithm>
+#include <exception>
 
 class ElementNotFoundException : public std::exception {
 public:

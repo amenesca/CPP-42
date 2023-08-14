@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 18:33:51 by amenesca          #+#    #+#             */
-/*   Updated: 2023/08/13 20:11:33 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/08/13 21:28:31 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,21 @@ class Span {
 
 		Span& operator=(const Span& copy);
 		
+		void addNumber(int nbr);
+		int longestSpan(void);
+		int shortestSpan(void); 
+		
 		class LimitExceededException : public std::exception
 		{
 			public:
 				virtual const char* what() const throw();
 		};
+				class NoSpanCanBeFound : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
 		
-		void addNumber(int nbr);
 };
 
 #endif

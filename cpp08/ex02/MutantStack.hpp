@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 13:23:06 by amenesca          #+#    #+#             */
-/*   Updated: 2023/08/14 17:10:35 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/08/15 19:42:23 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,6 @@ class MutantStack : public std::stack<T, std::deque<T> > {
 
 		iterator begin() {return this->c.begin();}
 		iterator end() {return this->c.end();}
-
-		const_iterator begin() const {return this->c.begin;}
-		const_iterator end() const {return this->c.begin;}
-
-		
 };
 
 #endif

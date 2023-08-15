@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 18:34:09 by amenesca          #+#    #+#             */
-/*   Updated: 2023/08/15 19:25:49 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/08/15 19:56:16 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,10 @@ int main()
 	Span_vector.fillElements(freedom.begin(), freedom.end());
 	std::cout << "Longest Span in Span_vector is: " << Span_vector.longestSpan() << std::endl;
 	std::cout << "Shortest Span in Span_vector is: " << Span_vector.shortestSpan() << std::endl;
+
+	std::cout << std::endl << "TEST - Biggest Span Possible for int" << std::endl;
+	Span Span_test(2);
+	Span_test.addNumber(2147483647);
+	Span_test.addNumber(-2147483648);
+	std::cout << Span_test.longestSpan() << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 18:33:51 by amenesca          #+#    #+#             */
-/*   Updated: 2023/08/14 14:41:09 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/08/15 18:59:12 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ class Span {
 		Span& operator=(const Span& copy);
 		
 		void addNumber(int nbr);
-		int longestSpan(void);
-		int shortestSpan(void); 
-		
+		long int longestSpan(void) const;
+		long int shortestSpan(void)const;
+		void	fillElements( std::vector<int>::iterator begin, std::vector<int>::iterator end);
 		class LimitExceededException : public std::exception
 		{
 			public:

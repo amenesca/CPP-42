@@ -1,2 +1,2 @@
 # CPP-42
-Listas de CPP da école 42 
+Listas da minha faculdade de engenharia de software

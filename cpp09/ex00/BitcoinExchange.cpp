@@ -6,22 +6,18 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 14:16:27 by amenesca          #+#    #+#             */
-/*   Updated: 2023/08/16 15:45:09 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/08/17 11:56:04 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
-#include <cstdlib>
-#include <fstream>
-#include <iostream>
-#include <string>
 
 bool BitcoinExchange::setData(const std::string &filePath) {
 	
 	std::ifstream csvfile(filePath.c_str());
 	
 	if (!csvfile.is_open()) {
-		std::cout << "Deu ruim para abrir" << std::endl;
+		std::cerr << "Error cannot open file" << std::endl;
 		return (1);
 	}
 	
@@ -46,3 +42,12 @@ bool BitcoinExchange::setData(const std::string &filePath) {
 	csvfile.close();
 	return (0); 
 }
+
+/* TEST FUNCTION ***
+void	BitcoinExchange::printData(void)
+{
+	for (std::map<std::string, double>::iterator it = _data.begin(); it != _data.end(); it++)
+	{
+		std::cout << it->first << " " << std::fixed << std::setprecision(2) << it->second << std::endl;
+	}
+}*/

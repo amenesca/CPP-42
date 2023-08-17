@@ -1,2 +1,2 @@
-# CPP-42
+# CPP Estudos
 Listas da minha faculdade de engenharia de software

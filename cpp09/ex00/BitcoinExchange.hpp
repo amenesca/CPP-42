@@ -23,9 +23,13 @@
 class BitcoinExchange {
 	private:
 		std::map<std::string, double> _data;
+		std::map<std::string, double> _input;
 	public:
 		bool setData(const std::string& filePath);
-//		void printData(void); TEST FUNCTION ***
+		bool setInput(const std::string& inputFile);
+		void printData(void);// TEST FUNCTION ***
+		void printInput(void);// TEST FUNCTION ***
+
 };
 
 #endif

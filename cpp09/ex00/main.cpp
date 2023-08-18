@@ -17,9 +17,21 @@ int main(int argc, char *argv[])
 {
 	BitcoinExchange transactions;
 
-	const bool testError = transactions.setData("./data.csv");
-	if (testError == true)
-		return (1);
+	if (argc == 2)
+	{
+		const bool testError = transactions.setData("./data.csv");
+		if (testError == true)
+			return 1;
 
-//transactions.printData(); TEST FUNCTION ***
+		const bool testError2 = transactions.setInput(argv[1]);
+		if (testError2 == true)
+			return 2;
+		//transactions.printData();// TEST FUNCTION ***
+		transactions.printInput();// TEST FUNCTION ***
+	}
+	else {
+		std::cerr << "Missing input file" << std::endl;
+		return 3;
+	}
+	return 0;
 }

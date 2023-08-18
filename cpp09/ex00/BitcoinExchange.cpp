@@ -20,7 +20,6 @@ bool BitcoinExchange::setData(const std::string &filePath) {
 		std::cerr << "Error cannot open file" << std::endl;
 		return (1);
 	}
-	
 	std::string line;
 	while (std::getline(csvfile, line))
 	{
@@ -43,11 +42,50 @@ bool BitcoinExchange::setData(const std::string &filePath) {
 	return (0); 
 }
 
-/* TEST FUNCTION ***
+bool	BitcoinExchange::setInput(const std::string& inputFile) {
+	std::ifstream infile(inputFile.c_str());
+	
+	if (!infile.is_open()) {
+		std::cerr << "Error cannot open file" << std::endl;
+		return (1);
+	}
+	
+	std::string line;
+	while (std::getline(infile, line))
+	{
+		std::string date, exchangeRate;
+		size_t	divPos;
+		char *endPtr;
+		double rate;
+
+		divPos = line.find("|");
+		if (divPos == std::string::npos || divPos == 0 || divPos >= line.length())
+			continue ;
+		date = line.substr(0 , 10);
+		exchangeRate = line.substr(divPos + 1);
+		rate = std::strtod(exchangeRate.c_str(), &endPtr);
+		if (endPtr == exchangeRate.c_str())
+        	continue;
+		_input[date] = rate;
+	}
+	infile.close();
+	return (0);
+}
+
+// TEST FUNCTION ***
 void	BitcoinExchange::printData(void)
 {
 	for (std::map<std::string, double>::iterator it = _data.begin(); it != _data.end(); it++)
 	{
 		std::cout << it->first << " " << std::fixed << std::setprecision(2) << it->second << std::endl;
 	}
-}*/
+}
+
+// TEST FUNCTION ***
+void	BitcoinExchange::printInput(void)
+{
+	for (std::map<std::string, double>::iterator it = _input.begin(); it != _input.end(); it++)
+	{
+		std::cout << it->first << " " << std::fixed << std::setprecision(2) << it->second << std::endl;
+	}
+}

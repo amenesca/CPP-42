@@ -72,6 +72,21 @@ bool	BitcoinExchange::setInput(const std::string& inputFile) {
 	return (0);
 }
 
+static bool validateInput(const std::string date, const int value) {
+
+
+}
+
+void BitcoinExchange::doOperation(void) {
+
+	std::map<std::string, double>::const_iterator inputIt;
+
+	for (inputIt = _input.begin; inputIt < _input.end(); inputIt++)
+	{
+		
+	}
+}
+
 // TEST FUNCTION ***
 void	BitcoinExchange::printData(void)
 {

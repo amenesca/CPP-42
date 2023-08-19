@@ -27,6 +27,7 @@ class BitcoinExchange {
 	public:
 		bool setData(const std::string& filePath);
 		bool setInput(const std::string& inputFile);
+		void doOperation(void);
 		void printData(void);// TEST FUNCTION ***
 		void printInput(void);// TEST FUNCTION ***
 

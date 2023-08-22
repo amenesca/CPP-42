@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 14:16:31 by amenesca          #+#    #+#             */
-/*   Updated: 2023/08/17 11:52:52 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/08/22 12:04:32 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,15 @@
 #include <fstream>
 #include <iostream>
 #include <iomanip>
+#include <sstream>
 
 class BitcoinExchange {
 	private:
-		std::map<std::string, double> _data;
-		std::map<std::string, double> _input;
+		std::map<std::string, float> _data;
 	public:
 		bool setData(const std::string& filePath);
-		bool setInput(const std::string& inputFile);
-		void doOperation(void);
+		void initProgamm(const std::string& inputFile) const;
 		void printData(void);// TEST FUNCTION ***
-		void printInput(void);// TEST FUNCTION ***
 
 };
 

@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 14:16:56 by amenesca          #+#    #+#             */
-/*   Updated: 2023/08/17 11:55:31 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/08/22 12:04:43 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,13 @@ int main(int argc, char *argv[])
 	if (argc == 2)
 	{
 		const bool testError = transactions.setData("./data.csv");
+		transactions.initProgamm(argv[1]);
 		if (testError == true)
 			return 1;
-
-		const bool testError2 = transactions.setInput(argv[1]);
-		if (testError2 == true)
-			return 2;
-		//transactions.printData();// TEST FUNCTION ***
-		transactions.printInput();// TEST FUNCTION ***
 	}
 	else {
-		std::cerr << "Missing input file" << std::endl;
-		return 3;
+		std::cerr << "Error: could not open file." << std::endl;
+		return 1;
 	}
 	return 0;
 }

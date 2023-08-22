@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 14:16:27 by amenesca          #+#    #+#             */
-/*   Updated: 2023/08/22 16:06:54 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/08/22 16:14:18 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,6 @@ BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& copy)
 std::map<std::string, float> BitcoinExchange::getData() const
 {
 	return (_data);
-}
-
-BitcoinExchange::BitcoinExchange(const std::string& filePath)
-{
-	setData(filePath);
 }
 
 bool BitcoinExchange::setData(const std::string &filePath) {

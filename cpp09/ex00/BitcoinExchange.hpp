@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 14:16:31 by amenesca          #+#    #+#             */
-/*   Updated: 2023/08/22 16:14:06 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/08/22 18:54:16 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 #include <cstdlib>
 #include <fstream>
 #include <iostream>
-#include <iomanip>
 #include <sstream>
 
 class BitcoinExchange {

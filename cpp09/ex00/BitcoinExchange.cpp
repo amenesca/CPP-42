@@ -6,11 +6,44 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 14:16:27 by amenesca          #+#    #+#             */
-/*   Updated: 2023/08/22 12:21:55 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/08/22 16:06:54 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
+
+BitcoinExchange::BitcoinExchange(void) {}
+
+BitcoinExchange::~BitcoinExchange(void) {}
+
+BitcoinExchange::BitcoinExchange(const std::map<std::string, float>& data)
+{
+	this->_data = data;
+}
+
+BitcoinExchange::BitcoinExchange(const BitcoinExchange& copy)
+{
+	*this = copy;
+}
+
+BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& copy)
+{
+	if (this == &copy)
+        return *this;
+	
+	this->_data = copy.getData();
+    return(*this);
+}
+
+std::map<std::string, float> BitcoinExchange::getData() const
+{
+	return (_data);
+}
+
+BitcoinExchange::BitcoinExchange(const std::string& filePath)
+{
+	setData(filePath);
+}
 
 bool BitcoinExchange::setData(const std::string &filePath) {
 	
@@ -51,33 +84,31 @@ int* DateToInt(const std::string& date, int *error)
 
     if (hyphen1 == std::string::npos || hyphen2 == std::string::npos || hyphen1 != 4 || hyphen2 != 7)
 	{
-        std::cerr << "Error: invalid date format." << std::endl;
+        std::cerr << "Error: invalid date format => " << date << std::endl;
 		*error = 1;
 		return intDate;
 	}
     intDate[0] = std::strtol(date.substr(0, hyphen1).c_str(), &endPtr, 10);
 	if (*endPtr != '\0')
 	{
-		std::cerr << "Error: invalid date." << std::endl;
+		std::cerr << "Error: invalid date => " << date << std::endl;
 		*error = 1;
 		return intDate;
 	}
     intDate[1] = std::strtol(date.substr(hyphen1 + 1, hyphen2 - hyphen1 - 1).c_str(), &endPtr, 10);
 	if (*endPtr != '\0')
 	{
-		std::cerr << "Error: invalid date." << std::endl;
+		std::cerr << "Error: invalid date => " << date << std::endl;
 		*error = 1;
 		return intDate;
 	}
 	intDate[2] = std::strtol(date.substr(hyphen2 + 1).c_str(), &endPtr, 10);
 	if (*endPtr != '\0')
 	{
-		std::cerr << "Error: invalid date." << std::endl;
+		std::cerr << "Error: invalid date => " << date << std::endl;
 		*error = 1;
 		return intDate;
 	}
-
-//	std::cout << "Ano: " << intDate[0] << ", Mês: " << intDate[1] << ", Dia: " << intDate[2] << std::endl;
 	return intDate;
 }
 
@@ -86,7 +117,7 @@ static int validateValue(const float& value)
 	if (value < static_cast<float>(0))
 	{
 		std::cerr << "Error: not a positive number." << std::endl;
-
+		return -1;
 	}
 	if (value > static_cast<float>(1000))
 	{
@@ -96,10 +127,86 @@ static int validateValue(const float& value)
 	return 1;
 }
 
-/*static void doOperation(void)
+static int validateDate(const int* intDate, const std::string& date)
 {
-	
-}*/
+	int year = intDate[0];
+    int month = intDate[1];
+    int day = intDate[2];
+
+    if (year < 2009 || (year == 2009 && month == 1 && day < 3)) {
+        std::cerr << "Error: No data in that period => " << date << std::endl;
+        return -1;
+    }
+
+    if (month < 1 || month > 12) {
+        std::cerr << "Error: invalid date => " << date << std::endl;
+        return -1;
+    }
+
+    if ((month == 4 || month == 6 || month == 9 || month == 11) && (day < 1 || day > 30)) {
+        std::cerr << "Error: invalid date => " << date << std::endl;
+        return -1;
+    }
+
+    if (month == 2) {
+        bool isLeapYear = (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
+
+        if ((isLeapYear && (day < 1 || day > 29)) || (!isLeapYear && (day < 1 || day > 28))) {
+            std::cerr << "Error: invalid date => " << date << std::endl;
+            return -1;
+        }
+    }
+
+    if ((month != 4 && month != 6 && month != 9 && month != 11) && (day < 1 || day > 31)) {
+        std::cerr << "Error: invalid date => " << date << std::endl;
+        return -1;
+    }
+
+    return 1;
+}
+
+void BitcoinExchange::doOperation(const std::string& date, const float& value) const
+{
+	float rate = (--this->_data.upper_bound(date))->second;
+    std::cout << date << " => " << value << " = " << value * rate << std::endl;
+}
+
+static int testDate(const std::string& line)
+{
+	int error = 0;
+	std::string date = line.substr(0, 10);
+	int *intDate = DateToInt(date, &error);
+	if (error == 1)
+	{
+		delete [] intDate;
+		error = 0;
+		return -1;
+	}
+	if (validateDate(intDate, line.substr(0, 10)) != 1)
+	{
+		delete [] intDate;
+		return -1;
+	}
+	delete [] intDate;
+	return 1;
+}
+
+static int testValue(const std::string& line, size_t pipePos, float* retValue)
+{
+	char *endPtr;
+	float value = std::strtof(line.substr(pipePos + 2).c_str(), &endPtr);
+	if (*endPtr == '\0' || (*endPtr == 'f' && *(endPtr + 1) == '\0'))
+	{
+		if (validateValue(value) != 1)
+			return -1;
+	}
+	else {
+		std::cerr << "Error: invalid value => " << line << std::endl;
+		return -1;
+	}
+	*retValue = value;
+	return 1;
+}
 
 void BitcoinExchange::initProgamm(const std::string& inputFile) const {
 
@@ -114,57 +221,27 @@ void BitcoinExchange::initProgamm(const std::string& inputFile) const {
 	while (getline(inFile, line))
 	{
 		if (i == 1 && line == "date | value") {
-			i = 0;
+			i++;
 			continue ;
 		}
 
-		
 		size_t pipePos;
 		pipePos = line.find("|");
-		if (pipePos == std::string::npos || pipePos != 11 || line.size() < 14)
+		if (pipePos == std::string::npos)
 		{
 			std::cerr << "Error: bad input => " << line << std::endl;
 			continue ;
 		}
 		
-		
-		int error = 0;
-		int *intDate = DateToInt(line.substr(0, 10), &error);
-		if (error == 1)
-		{
-			delete [] intDate;
-			error = 0;
+		if (testDate(line) != 1)
 			continue;
-		}
-//		validateDate(intDate);
 		
-		char *endPtr;
-		float value = std::strtof(line.substr(pipePos + 2).c_str(), &endPtr);
-		if (*endPtr == '\0' || (*endPtr == 'f' && *(endPtr + 1) == '\0'))
-		{
-			if (validateValue(value) == -1)
-				continue ;
-		}
-		else {
-			std::cerr << "Error: bad input => " << line << std::endl;
-			continue ;
-		}
-
+		float value;
+		if (testValue(line, pipePos, &value) != 1)
+			continue;
 		
-//		doOperation();
-
-		
-		delete [] intDate;
+		doOperation(line.substr(0, 10), value);
 	}
 	
 	inFile.close();
-}
-
-// TEST FUNCTION ***
-void	BitcoinExchange::printData(void)
-{
-	for (std::map<std::string, float>::iterator it = _data.begin(); it != _data.end(); it++)
-	{
-		std::cout << it->first << " " << std::fixed << std::setprecision(2) << it->second << std::endl;
-	}
 }

@@ -6,11 +6,27 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 18:46:51 by amenesca          #+#    #+#             */
-/*   Updated: 2023/08/23 11:18:13 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/08/23 11:44:09 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RPN.hpp"
+
+RPN::RPN(void) {}
+
+RPN::~RPN(void) {}
+
+RPN::RPN(const RPN& copy) {
+	*this = copy;
+}
+
+RPN& RPN::operator=(const RPN& copy) {
+	if (this == &copy)
+		return *this;
+	
+	this->_rpn = copy._rpn;
+	return(*this);
+}
 
 void RPN::Operation(const std::string& input) {
 	std::istringstream iss(input);

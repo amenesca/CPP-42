@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 18:46:45 by amenesca          #+#    #+#             */
-/*   Updated: 2023/08/22 19:10:55 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/08/23 11:17:44 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-		std::cout << "vai tomar no cu" << std::endl;
+		std::cerr << "Error: Invalid arguments." << std::endl;
 		return 1;
 	}
 	return 0;

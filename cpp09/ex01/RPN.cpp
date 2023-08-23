@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 18:46:51 by amenesca          #+#    #+#             */
-/*   Updated: 2023/08/22 20:03:01 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/08/23 11:18:13 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,38 +17,41 @@ void RPN::Operation(const std::string& input) {
 
 	std::string element;
 	while (iss >> element) {
-		if (element >= "0" && element <= "9")
-		{
+		if (element >= "0" && element <= "9") {
 			_rpn.push(std::atoi(element.c_str()));
-			continue;
-		}
-		else
-		{
-			int x = _rpn.top();
-			_rpn.pop();
+		} else if (element == "+" || element == "-" || element == "*" || element == "/") {
+			if (_rpn.size() < 2) {
+				std::cerr << "Error" << std::endl;
+				return;
+			}
 			int y = _rpn.top();
 			_rpn.pop();
-			if (element == "+")
-			{
+			int x = _rpn.top();
+			_rpn.pop();
+
+			if (element == "+") {
 				_rpn.push(x + y);
-				continue;
-			}
-			if (element == "-")
-			{
+			} else if (element == "-") {
 				_rpn.push(x - y);
-				continue;
-			}	
-			if (element == "*")
-			{
+			} else if (element == "*") {
 				_rpn.push(x * y);
-				continue;
-			}
-			if (element == "/")
-			{
+			} else if (element == "/") {
+				if (y == 0) {
+					std::cerr << "Error" << std::endl;
+					return;
+				}
 				_rpn.push(x / y);
-				continue;
 			}
+		} else {
+			std::cerr << "Error" << std::endl;
+			return;
 		}
 	}
+
+	if (_rpn.size() != 1) {
+		std::cerr << "Error" << std::endl;
+		return;
+	}
+
 	std::cout << _rpn.top() << std::endl;
 }

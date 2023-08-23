@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 14:16:27 by amenesca          #+#    #+#             */
-/*   Updated: 2023/08/22 16:14:18 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/08/23 14:15:24 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -203,8 +203,10 @@ static int testValue(const std::string& line, size_t pipePos, float* retValue)
 	return 1;
 }
 
-void BitcoinExchange::initProgamm(const std::string& inputFile) const {
+void BitcoinExchange::initProgamm(const std::string& inputFile) {
 
+	if (this->setData("./data.csv") == true)
+		return ;
 	std::ifstream inFile(inputFile.c_str());
 	if (!inFile.is_open()) {
 		std::cerr << "Error: could not open file." << std::endl;

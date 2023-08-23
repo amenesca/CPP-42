@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 11:48:50 by amenesca          #+#    #+#             */
-/*   Updated: 2023/08/23 19:21:22 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/08/23 19:29:12 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,7 +149,7 @@ void PmergeMe::doOperation(int argc, char **args) {
 
 	displayAfter();
 	
-	 std::cout<< "Time to process a range of " << argc - 1 << " elements of std::list " << static_cast<double>(listTime)/CLOCKS_PER_SEC * 1000<< " ms" << std::endl;
+	 std::cout<< "Time to process a range of " << argc - 1 << " elements of std::list   " << static_cast<double>(listTime)/CLOCKS_PER_SEC * 1000<< " ms" << std::endl;
 	 std::cout<< "Time to process a range of " << argc - 1 << " elements of std::vector " << static_cast<double>(vecTime)/CLOCKS_PER_SEC * 1000<< " ms" << std::endl;
 }
 

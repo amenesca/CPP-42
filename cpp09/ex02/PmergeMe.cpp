@@ -6,11 +6,28 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 11:48:50 by amenesca          #+#    #+#             */
-/*   Updated: 2023/08/23 19:29:12 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/08/23 19:34:08 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
+
+PmergeMe::PmergeMe() {}
+
+PmergeMe::~PmergeMe() {}
+
+PmergeMe::PmergeMe(const PmergeMe& copy) {
+	*this = copy;
+}
+
+PmergeMe& PmergeMe::operator=(const PmergeMe& copy) {
+	if (this == &copy) {
+		return (*this);
+	}
+	_listcont = copy._listcont;
+	_veccont = copy._veccont;
+	return (*this);
+}
 
 static void mergeVec(std::vector<int>::iterator begin,
 					std::vector<int>::iterator mid,

@@ -6,7 +6,7 @@
 /*   By: amenesca <amenesca@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 11:48:45 by amenesca          #+#    #+#             */
-/*   Updated: 2023/08/23 18:26:13 by amenesca         ###   ########.fr       */
+/*   Updated: 2023/08/24 11:55:09 by amenesca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ int main(int argc, char *argv[]) {
 	if (argc > 1) {
 		orderAndProgess.doOperation(argc, argv);	
 	} else {
-		std::cerr << "insuficient input quantity" << std::endl;
+		std::cerr << "Error: insuficient input quantity" << std::endl;
 	}
 }
